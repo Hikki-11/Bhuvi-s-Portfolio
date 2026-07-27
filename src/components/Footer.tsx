@@ -52,10 +52,6 @@ export const Footer: React.FC = () => {
               LinkedIn
             </a>
             <span>•</span>
-            <a href={PROFILE_DATA.leetcode} target="_blank" rel="noreferrer" className="hover:text-[#212529] transition-colors">
-              LeetCode
-            </a>
-            <span>•</span>
             <a href={`mailto:${PROFILE_DATA.email}`} className="hover:text-[#212529] transition-colors">
               Email
             </a>

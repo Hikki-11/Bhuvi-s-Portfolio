@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FileText, Mail, Github, Linkedin, ArrowRight, Server, Code2 } from 'lucide-react';
+import { FileText, Mail, Github, Linkedin, ArrowRight, Server } from 'lucide-react';
 import { PROFILE_DATA } from '../data/portfolioData';
 import heroVectorImg from '../assets/images/centered_engineer_card_1785134211741.jpg';
 
@@ -117,16 +117,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
               title="LinkedIn Profile"
             >
               <Linkedin className="w-4 h-4" />
-            </a>
-            <a
-              href={PROFILE_DATA.leetcode}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-[14px] bg-[rgba(255,255,255,0.55)] border border-[rgba(33,37,41,0.08)] text-[#495057] hover:text-[#212529] hover:border-[rgba(33,37,41,0.2)] transition-colors cursor-pointer flex items-center space-x-1.5"
-              title="LeetCode Profile"
-            >
-              <Code2 className="w-4 h-4" />
-              <span className="text-xs font-mono font-bold">LeetCode</span>
             </a>
             <a
               href={`mailto:${PROFILE_DATA.email}`}

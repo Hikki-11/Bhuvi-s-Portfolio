@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, Linkedin, Github, Send, Check, Copy, FileText, Code2 } from 'lucide-react';
+import { Mail, Phone, Linkedin, Github, Send, Check, Copy, FileText } from 'lucide-react';
 import { PROFILE_DATA } from '../data/portfolioData';
 import { ScrollReveal } from './ScrollReveal';
 
@@ -106,7 +106,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
             </div>
 
             {/* Social Channels Row */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div className="grid grid-cols-2 gap-3">
               <a
                 href={PROFILE_DATA.linkedin}
                 target="_blank"
@@ -136,21 +136,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
                   <div className="text-[10px] font-mono text-[#6C757D] truncate">@Hikki-11</div>
                 </div>
               </a>
-
-              <a
-                href={PROFILE_DATA.leetcode}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glass-card p-3.5 rounded-[18px] bg-[rgba(255,255,255,0.75)] border border-[rgba(33,37,41,0.08)] hover:border-[#212529]/40 flex items-center space-x-3 transition-all text-left shadow-xs backdrop-blur-md"
-              >
-                <div className="p-2 rounded-[10px] bg-[#DEE2E6] text-[#212529] border border-[rgba(33,37,41,0.08)] shrink-0">
-                  <Code2 className="w-4 h-4 text-[#212529]" />
-                </div>
-                <div className="min-w-0">
-                  <div className="text-xs font-bold text-[#212529]">LeetCode</div>
-                  <div className="text-[10px] font-mono text-[#6C757D] truncate">@BHUVANESASN_N</div>
-                </div>
-              </a>
             </div>
 
             {/* Resume Callout */}
@@ -174,7 +159,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
           {/* Right Side: Contact Message Form */}
           <ScrollReveal direction="right" delay={0.25} className="lg:col-span-7">
             <div className="glass-card p-6 sm:p-8 rounded-[18px] bg-[rgba(255,255,255,0.75)] border border-[rgba(33,37,41,0.08)] space-y-6 text-left shadow-xs backdrop-blur-md">
-              <div className="border-b border-[rgba(33,37,41,0.08)] pb-4">
+              <div className="border-b border-[rgba(33,37,41,0.08)] pb-4 text-center">
                 <h3 className="text-xl font-bold text-[#212529] font-heading">Let's talk</h3>
                 <p className="text-xs text-[#6C757D] mt-0.5">Reach out directly regarding opportunities or inquiries.</p>
               </div>

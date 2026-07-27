@@ -1,14 +1,23 @@
 import React from 'react';
 import { 
-  Code2, Star, ExternalLink, Trophy, 
-  Award, Sparkles, Target 
+  Star, Trophy, 
+  Award, Sparkles, Target, Code2 
 } from 'lucide-react';
-import { DSA_STATS } from '../data/portfolioData';
 import { ScrollReveal } from './ScrollReveal';
 import { motion } from 'framer-motion';
 
 export const AchievementsSection: React.FC = () => {
   const achievementsList = [
+    {
+      id: 'leetcode',
+      title: '170+ LeetCode DSA Problems Solved',
+      category: 'Competitive Programming',
+      date: 'Active Problem Solver',
+      badge: 'Data Structures & Algorithms',
+      description: 'Solved 170+ algorithmic problems on LeetCode utilizing Data Structures & Algorithms (DSA) concepts including Arrays, Two Pointers, Strings, Trees, and Recursion.',
+      impact: 'Demonstrated strong analytical problem-solving skills and core computer science fundamentals.',
+      icon: Code2
+    },
     {
       id: 'hackxtreme',
       title: "HACKXTREME'26 Award Winner & Media Wave Feature",
@@ -18,16 +27,6 @@ export const AchievementsSection: React.FC = () => {
       description: 'Built an AI-powered Digital Twin model simulating urban traffic, energy demand, and air pollution from real-time ESP32 IoT sensor telemetry. Awarded by Media Wave panel and shortlisted for an exclusive internship opportunity.',
       impact: 'Demonstrated 18% potential city energy savings through smart grid load balancing.',
       icon: Trophy
-    },
-    {
-      id: 'leetcode',
-      title: '170+ LeetCode Algorithmic Milestone',
-      category: 'Competitive Programming',
-      date: 'Active Competitor',
-      badge: 'DSA Mastery',
-      description: 'Consistent algorithmic problem solving across fundamental computer science topics including Arrays, Two Pointers, Strings, Mathematics, Trees, and Recursion.',
-      impact: '85 Easy, 72 Medium, and 13 Hard problems solved.',
-      icon: Code2
     },
     {
       id: 'msme',
@@ -91,65 +90,6 @@ export const AchievementsSection: React.FC = () => {
           </div>
         </ScrollReveal>
 
-        {/* LeetCode Quick Stats Spotlight */}
-        <ScrollReveal direction="up" delay={0.1}>
-          <div className="glass-card p-8 rounded-[18px] space-y-6 bg-[rgba(255,255,255,0.55)] border border-[rgba(33,37,41,0.08)]">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-[rgba(33,37,41,0.08)] pb-5 gap-4 text-left">
-              <div className="space-y-1">
-                <div className="flex items-center space-x-2 text-xs font-mono font-semibold text-[#495057]">
-                  <Code2 className="w-4 h-4 text-[#212529]" />
-                  <span>Competitive Coding Milestone</span>
-                </div>
-                <h3 className="text-xl font-bold text-[#212529] font-heading">
-                  LeetCode Algorithmic Problem Solving
-                </h3>
-              </div>
-
-              <div className="flex items-center space-x-2">
-                <a
-                  href={DSA_STATS.leetcodeProfile}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 rounded-[12px] bg-[#DEE2E6] hover:bg-[#E9ECEF] text-[#212529] hover:text-[#495057] border border-[rgba(33,37,41,0.08)] text-xs font-mono font-semibold flex items-center space-x-1.5 transition-colors cursor-pointer"
-                >
-                  <span>View LeetCode Profile</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-left">
-              <div className="space-y-1">
-                <div className="text-3xl font-mono font-extrabold text-[#212529]">
-                  {DSA_STATS.totalSolved}+
-                </div>
-                <div className="text-xs font-mono text-[#6C757D]">Total Solved</div>
-              </div>
-
-              <div className="space-y-1">
-                <div className="text-3xl font-mono font-extrabold text-[#212529]">
-                  {DSA_STATS.easyCount}
-                </div>
-                <div className="text-xs font-mono text-[#6C757D]">Easy Level</div>
-              </div>
-
-              <div className="space-y-1">
-                <div className="text-3xl font-mono font-extrabold text-[#212529]">
-                  {DSA_STATS.mediumCount}
-                </div>
-                <div className="text-xs font-mono text-[#6C757D]">Medium Level</div>
-              </div>
-
-              <div className="space-y-1">
-                <div className="text-3xl font-mono font-extrabold text-[#343A40]">
-                  {DSA_STATS.hardCount}
-                </div>
-                <div className="text-xs font-mono text-[#6C757D]">Hard Level</div>
-              </div>
-            </div>
-          </div>
-        </ScrollReveal>
-
         {/* 1-by-1 Staggered Achievement Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {achievementsList.map((item, index) => {
@@ -157,8 +97,8 @@ export const AchievementsSection: React.FC = () => {
             return (
               <motion.div
                 key={item.id}
-                initial={{ opacity: 0, y: 35, scale: 0.96 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                initial={{ opacity: 0, y: 35, scale: 0.96, filter: 'blur(8px)' }}
+                whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{
                   duration: 0.5,
@@ -174,9 +114,6 @@ export const AchievementsSection: React.FC = () => {
                       <div className="p-2 rounded-[10px] bg-[#DEE2E6] border border-[rgba(33,37,41,0.08)] text-[#212529] shrink-0">
                         <Icon className="w-4 h-4 text-[#212529]" />
                       </div>
-                      <span className="text-[11px] font-mono font-semibold text-[#212529] bg-[#DEE2E6] px-2.5 py-1 rounded-full border border-[rgba(33,37,41,0.08)] truncate">
-                        {item.badge}
-                      </span>
                     </div>
                     <span className="text-[11px] font-mono text-[#6C757D] bg-[#DEE2E6] px-2 py-0.5 rounded-md border border-[rgba(33,37,41,0.08)] shrink-0">
                       {item.date}

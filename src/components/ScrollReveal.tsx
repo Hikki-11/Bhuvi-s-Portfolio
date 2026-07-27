@@ -9,6 +9,7 @@ interface ScrollRevealProps {
   distance?: number;
   duration?: number;
   once?: boolean;
+  blur?: boolean;
 }
 
 export const ScrollReveal: React.FC<ScrollRevealProps> = ({
@@ -19,6 +20,7 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
   distance = 35,
   duration = 0.6,
   once = false,
+  blur = true,
 }) => {
   const getInitialOffset = () => {
     switch (direction) {
@@ -42,8 +44,17 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, ...initialOffset }}
-      whileInView={{ opacity: 1, x: 0, y: 0 }}
+      initial={{ 
+        opacity: 0, 
+        filter: blur ? 'blur(8px)' : 'blur(0px)', 
+        ...initialOffset 
+      }}
+      whileInView={{ 
+        opacity: 1, 
+        x: 0, 
+        y: 0, 
+        filter: 'blur(0px)' 
+      }}
       viewport={{ once, margin: '-60px' }}
       transition={{
         duration,

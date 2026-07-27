@@ -27,7 +27,7 @@ export const PROFILE_DATA = {
   degree: 'B.E. Computer Science and Engineering (CSE)',
   batch: '2024 – 2028',
   location: 'Tamil Nadu, India',
-  email: 'bhuvanesan11.n@gmail.com',
+  email: 'bhuvanesan.n@gmail.com',
   phone: '+91 8754761937',
   github: 'https://github.com/Hikki-11',
   linkedin: 'https://linkedin.com/in/bhuvanesan-n-9a2b86339',

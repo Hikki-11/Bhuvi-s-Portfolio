@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Menu, X, FileText, Code2 } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 interface NavbarProps {
-  onOpenResume: () => void;
+  onOpenResume?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
+export const Navbar: React.FC<NavbarProps> = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
@@ -190,29 +191,41 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
           : 'bg-transparent py-5'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center space-x-4 sm:space-x-8 relative">
         
         {/* Brand / Logo */}
         <a
           href="#hero"
           onClick={(e) => handleNavClick(e, '#hero')}
-          className="flex items-center space-x-3 group"
+          className="flex items-center group focus:outline-none"
         >
-          <div className="w-10 h-10 rounded-[12px] bg-[#DEE2E6] border border-[#212529]/10 flex items-center justify-center text-[#212529] font-bold text-lg group-hover:border-[#212529] group-hover:bg-[#212529]/10 transition-all shadow-xs">
-            <Code2 className="w-5 h-5 text-[#212529]" />
-          </div>
-          <div className="flex flex-col text-left">
-            <span className="font-bold text-[#212529] text-base tracking-tight group-hover:text-[#343A40] transition-colors font-heading">
-              BHUVANESAN N
-            </span>
-            <span className="text-[11px] text-[#6C757D] font-mono -mt-0.5 hidden sm:inline">
-              Backend Developer
-            </span>
-          </div>
+          <motion.div
+            className="relative font-mono font-black text-2xl sm:text-3xl tracking-tighter text-[#212529] select-none leading-none drop-shadow-[6px_2px_2px_rgba(33,37,41,0.35)]"
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <motion.span
+              className="relative z-10 text-[#212529] font-extrabold tracking-tighter transition-all duration-300 inline-block"
+              animate={{
+                textShadow: [
+                  '6px 2px 3px rgba(33,37,41,0.25)',
+                  '8px 3px 8px rgba(33,37,41,0.45)',
+                  '6px 2px 3px rgba(33,37,41,0.25)',
+                ],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: 'easeInOut',
+              }}
+            >
+              BN
+            </motion.span>
+          </motion.div>
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden xl:flex items-center space-x-1 bg-[#DEE2E6]/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-[#212529]/10 shadow-xs">
+        <nav className="hidden md:flex items-center space-x-1 bg-[#DEE2E6]/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-[#212529]/10 shadow-xs">
           {navLinks.map((link) => {
             const isActive = activeSection === link.id;
             return (
@@ -232,27 +245,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
           })}
         </nav>
 
-        {/* Action Button: Resume */}
-        <div className="hidden md:flex items-center space-x-3">
-          <button
-            onClick={onOpenResume}
-            className="px-4 py-2 rounded-[14px] bg-[#212529] hover:bg-[#343A40] text-[#FFFFFF] text-xs font-bold flex items-center space-x-1.5 transition-all shadow-xs cursor-pointer border border-[#212529]"
-          >
-            <FileText className="w-3.5 h-3.5 text-[#FFFFFF]" />
-            <span>Resume</span>
-          </button>
-        </div>
-
         {/* Mobile Menu Toggle Button */}
-        <div className="flex items-center space-x-2 xl:hidden">
-          <button
-            onClick={onOpenResume}
-            className="px-3 py-1.5 rounded-full bg-[#212529] hover:bg-[#343A40] text-[#FFFFFF] text-xs font-bold flex items-center space-x-1"
-          >
-            <FileText className="w-3.5 h-3.5 text-[#FFFFFF]" />
-            <span>Resume</span>
-          </button>
-
+        <div className="absolute right-4 sm:right-6 md:hidden flex items-center">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 rounded-[12px] bg-[#DEE2E6] border border-[#212529]/10 text-[#212529] hover:bg-[#E9ECEF]"
@@ -266,7 +260,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="xl:hidden bg-[#E9ECEF]/95 backdrop-blur-xl border-b border-[#212529]/10 px-4 pt-3 pb-6 space-y-2 animate-fade-in shadow-lg">
+        <div className="md:hidden bg-[#E9ECEF]/95 backdrop-blur-xl border-b border-[#212529]/10 px-4 pt-3 pb-6 space-y-2 animate-fade-in shadow-lg text-center">
           {navLinks.map((link) => (
             <a
               key={link.id}
@@ -281,18 +275,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResume }) => {
               {link.name}
             </a>
           ))}
-          <div className="pt-2 border-t border-[#212529]/10">
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenResume();
-              }}
-              className="w-full py-2.5 rounded-[14px] bg-[#212529] hover:bg-[#343A40] text-[#FFFFFF] text-sm font-bold flex items-center justify-center space-x-2 shadow-sm"
-            >
-              <FileText className="w-4 h-4 text-[#FFFFFF]" />
-              <span>View Full Resume</span>
-            </button>
-          </div>
         </div>
       )}
     </header>
