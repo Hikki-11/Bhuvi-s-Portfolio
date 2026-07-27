@@ -42,10 +42,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
         <ScrollReveal direction="up">
           <div className="text-center space-y-3 max-w-2xl mx-auto">
             <h2 className="text-3xl sm:text-5xl font-extrabold text-[#212529] tracking-tight font-heading">
-              Contact
+              Let'z Talk
             </h2>
             <p className="text-sm sm:text-base text-[#495057] leading-relaxed">
-              Available for software engineering internships, backend development opportunities, and technical project collaborations.
+              Available for internships, backend development opportunities, and technical project collaborations.
             </p>
           </div>
         </ScrollReveal>
@@ -146,7 +146,9 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
               </div>
 
               <button
-                onClick={onOpenResume}
+                onClick={() => {
+                  if (onOpenResume) onOpenResume();
+                }}
                 className="px-4 py-2.5 rounded-[12px] bg-[#212529] hover:bg-[#343A40] text-[#FFFFFF] font-bold text-xs flex items-center space-x-1.5 transition-all shadow-xs cursor-pointer border border-[#212529]"
               >
                 <FileText className="w-3.5 h-3.5 text-[#FFFFFF]" />
@@ -159,11 +161,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
           {/* Right Side: Contact Message Form */}
           <ScrollReveal direction="right" delay={0.25} className="lg:col-span-7">
             <div className="glass-card p-6 sm:p-8 rounded-[18px] bg-[rgba(255,255,255,0.75)] border border-[rgba(33,37,41,0.08)] space-y-6 text-left shadow-xs backdrop-blur-md">
-              <div className="border-b border-[rgba(33,37,41,0.08)] pb-4 text-center">
-                <h3 className="text-xl font-bold text-[#212529] font-heading">Let's talk</h3>
-                <p className="text-xs text-[#6C757D] mt-0.5">Reach out directly regarding opportunities or inquiries.</p>
-              </div>
-
               {submitted ? (
                 <div className="p-6 rounded-[14px] bg-[#DEE2E6] border border-[rgba(33,37,41,0.08)] text-center space-y-2 animate-fade-in">
                   <div className="w-10 h-10 rounded-full bg-[#212529] text-[#FFFFFF] flex items-center justify-center mx-auto font-bold">
@@ -220,7 +217,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
                       rows={4}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Hello Bhuvanesan, I reviewed your software engineer portfolio..."
+                      placeholder="Hello Bhuvanesan, I reviewed your portfolio..."
                       className="w-full px-3.5 py-2.5 rounded-[12px] bg-[#DEE2E6] border border-[rgba(33,37,41,0.08)] text-[#212529] text-xs focus:outline-none focus:border-[#212529] resize-none placeholder:text-[#6C757D]"
                     />
                   </div>

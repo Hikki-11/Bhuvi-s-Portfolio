@@ -82,7 +82,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
           {/* Call-to-action buttons */}
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <button
-              onClick={onOpenResume}
+              onClick={() => {
+                if (onOpenResume) onOpenResume();
+              }}
               className="px-6 py-3.5 rounded-[18px] bg-[#212529] hover:bg-[#343A40] text-[#FFFFFF] font-semibold text-sm transition-all shadow-sm cursor-pointer flex items-center space-x-2 border border-[#212529]"
             >
               <FileText className="w-4 h-4 text-[#FFFFFF]" />

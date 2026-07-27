@@ -126,21 +126,11 @@ export const ProjectsSection: React.FC = () => {
                   <div className="pt-4 border-t border-[rgba(33,37,41,0.08)] flex items-center justify-between gap-2">
                     <button
                       onClick={() => setActiveModalProject(project)}
-                      className="flex-1 py-2.5 px-3 rounded-[12px] bg-[#212529] hover:bg-[#343A40] text-[#FFFFFF] font-bold text-xs flex items-center justify-center space-x-1 transition-all cursor-pointer border border-[#212529]"
+                      className="w-full py-2.5 px-3 rounded-[12px] bg-[#212529] hover:bg-[#343A40] text-[#FFFFFF] font-bold text-xs flex items-center justify-center space-x-1 transition-all cursor-pointer border border-[#212529]"
                     >
                       <span>View Specs & Arch</span>
                       <ArrowRight className="w-3.5 h-3.5 text-[#FFFFFF]" />
                     </button>
-
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2.5 rounded-[12px] bg-[#DEE2E6] hover:bg-[#E9ECEF] border border-[rgba(33,37,41,0.08)] text-[#495057] hover:text-[#212529] transition-colors"
-                      title="GitHub Repo"
-                    >
-                      <Github className="w-4 h-4" />
-                    </a>
                   </div>
 
                 </div>
