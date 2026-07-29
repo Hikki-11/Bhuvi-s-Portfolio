@@ -42,7 +42,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
         <ScrollReveal direction="up">
           <div className="text-center space-y-3 max-w-2xl mx-auto">
             <h2 className="text-3xl sm:text-5xl font-extrabold text-[#212529] tracking-tight font-heading">
-              Let'z Talk
+              Let's Talk
             </h2>
             <p className="text-sm sm:text-base text-[#495057] leading-relaxed">
               Available for internships, backend development opportunities, and technical project collaborations.

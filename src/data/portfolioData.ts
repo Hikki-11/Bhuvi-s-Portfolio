@@ -311,6 +311,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       { name: 'Core Java', level: 92, categoryTag: 'Backend', experience: 'Advanced', icon: 'Coffee', highlight: true },
       { name: 'Spring Boot', level: 88, categoryTag: 'Backend', experience: 'Advanced', icon: 'Zap', highlight: true },
       { name: 'Spring MVC & REST APIs', level: 90, categoryTag: 'Backend', experience: 'Advanced', icon: 'Network', highlight: true },
+      { name: 'JPA & Hibernate ORM', level: 88, categoryTag: 'Backend', experience: 'Advanced', icon: 'Layers', highlight: true },
       { name: 'Object-Oriented Programming (OOP)', level: 94, categoryTag: 'Core', experience: 'Expert', icon: 'Code', highlight: true },
       { name: 'CRUD & API Design', level: 92, categoryTag: 'Backend', experience: 'Advanced', icon: 'Sliders' },
     ],
