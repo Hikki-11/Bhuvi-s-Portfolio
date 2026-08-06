@@ -1,15 +1,15 @@
 import React from 'react';
-import { Sparkles, Target, Heart } from 'lucide-react';
+import { Sparkles, Target, Heart, Server, Zap, Network, Database, TestTube, Brain } from 'lucide-react';
 import { ScrollReveal } from './ScrollReveal';
 
 export const AboutSection: React.FC = () => {
   const focusAreas = [
-    { label: 'Backend Development', icon: '☕' },
-    { label: 'Spring Boot', icon: '🌱' },
-    { label: 'REST APIs', icon: '🔗' },
-    { label: 'Database Design', icon: '🗄️' },
-    { label: 'Software Testing', icon: '🧪' },
-    { label: 'Problem Solving', icon: '🧩' },
+    { label: 'Backend Development', icon: Server },
+    { label: 'Spring Boot', icon: Zap },
+    { label: 'REST APIs', icon: Network },
+    { label: 'Database Design', icon: Database },
+    { label: 'Software Testing', icon: TestTube },
+    { label: 'Problem Solving', icon: Brain },
   ];
 
   return (
@@ -51,17 +51,20 @@ export const AboutSection: React.FC = () => {
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                {focusAreas.map((area, idx) => (
-                  <div
-                    key={idx}
-                    className="p-3.5 rounded-[14px] bg-[#DEE2E6]/80 border border-[rgba(33,37,41,0.08)] hover:border-[#212529]/30 flex items-center space-x-2.5 transition-all shadow-2xs group"
-                  >
-                    <span className="text-lg group-hover:scale-110 transition-transform">{area.icon}</span>
-                    <span className="text-xs sm:text-sm font-mono font-bold text-[#212529] tracking-tight">
-                      {area.label}
-                    </span>
-                  </div>
-                ))}
+                {focusAreas.map((area, idx) => {
+                  const IconComponent = area.icon;
+                  return (
+                    <div
+                      key={idx}
+                      className="p-3.5 rounded-[14px] bg-[#DEE2E6]/80 border border-[rgba(33,37,41,0.08)] hover:border-[#212529]/30 flex items-center space-x-2.5 transition-all shadow-2xs group"
+                    >
+                      <IconComponent className="w-4 h-4 text-[#212529] group-hover:scale-110 transition-transform shrink-0" />
+                      <span className="text-xs sm:text-sm font-mono font-bold text-[#212529] tracking-tight">
+                        {area.label}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
 
