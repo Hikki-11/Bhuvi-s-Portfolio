@@ -79,13 +79,11 @@ Smart Energy Meter                          ESP32 · LCD · Embedded Systems · 
 • Designed an embedded solution capable of continuous energy usage tracking 
   for smart monitoring applications.
 
-Employee Management System                            HTML · CSS · SQL
-• Developed an Employee Management System with a responsive web interface for 
-  managing employee records.
-• Implemented CRUD operations to add, update, delete, and retrieve employee 
-  information using SQL.
-• Designed structured input forms for efficient employee data management and validation.
-• Built a user-friendly interface to simplify employee record management and improve usability.
+Course Registration System                       Java · Spring Boot · Hibernate ORM · MySQL
+• Developed a Course Registration System enabling students to browse, register, and manage courses while enabling admin control.
+• Implemented a layered architecture using Spring Boot, Hibernate ORM, and MySQL for secure, efficient data persistence.
+• Built student registration workflows and administrator course management capabilities with dynamic seat tracking.
+• Designed structured user interfaces and form validation for seamless course enrollment and record management.
 
 Micro Failure Whisperer (Ongoing)           Python · Machine Learning · Predictive Maintenance
 • Developing an AI-powered predictive maintenance system to detect micro-level 
@@ -350,14 +348,14 @@ ACHIEVEMENTS
 
                   <div>
                     <div className="flex justify-between items-baseline font-bold text-[#212529]">
-                      <span>Employee Management System</span>
-                      <span className="text-xs font-mono text-[#6C757D] font-normal">HTML · CSS · SQL</span>
+                      <span>Course Registration System</span>
+                      <span className="text-xs font-mono text-[#6C757D] font-normal">Java · Spring Boot · Hibernate ORM · MySQL</span>
                     </div>
                     <ul className="list-disc list-outside pl-4 text-xs text-[#343A40] space-y-0.5 mt-1">
-                      <li>Developed an Employee Management System with a responsive web interface for managing employee records.</li>
-                      <li>Implemented CRUD operations to add, update, delete, and retrieve employee information using SQL.</li>
-                      <li>Designed structured input forms for efficient employee data management and validation.</li>
-                      <li>Built a user-friendly interface to simplify employee record management and improve usability.</li>
+                      <li>Developed a Course Registration System enabling students to browse, register, and manage courses while enabling admin control.</li>
+                      <li>Implemented a layered architecture using Spring Boot, Hibernate ORM, and MySQL for secure, efficient data management.</li>
+                      <li>Designed student registration workflows and administrator course offering controls.</li>
+                      <li>Built user-friendly interfaces with input validation for seamless course enrollment.</li>
                     </ul>
                   </div>
 
