@@ -26,19 +26,24 @@ export const StatsSection: React.FC = () => {
   };
 
   return (
-    <section id="stats" className="py-20 relative bg-[#EEEAE5] border-t border-[#D9D6D2]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+    <section id="stats" className="py-20 relative bg-[#DEE2E6] border-t border-[rgba(33,37,41,0.08)] overflow-hidden">
+      {/* Background Ambient Grid & Glows */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none" />
+      <div className="absolute -top-20 -left-20 w-80 h-80 bg-gradient-to-tr from-[#CED4DA] to-[#ADB5BD] rounded-full blur-3xl opacity-35 pointer-events-none" />
+      <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-gradient-to-br from-[#E9ECEF] to-[#ADB5BD] rounded-full blur-3xl opacity-35 pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 relative z-10">
         
         {/* Section Header */}
         <div className="text-center space-y-3">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#FAF8F5] border border-[#D9D6D2] text-[#2D6A4F] font-mono text-xs font-semibold">
-            <Binary className="w-4 h-4" />
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[rgba(255,255,255,0.8)] border border-[rgba(255,255,255,0.9)] text-[#212529] font-mono text-xs font-semibold backdrop-blur-md">
+            <Binary className="w-4 h-4 text-[#212529]" />
             <span>Competitive Programming & Code Activity</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#1F2A24] font-heading tracking-tight">
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#212529] font-heading tracking-tight">
             Developer Statistics & DSA Mastery
           </h2>
-          <p className="text-base text-[#5F6B63] max-w-2xl mx-auto">
+          <p className="text-base text-[#495057] max-w-2xl mx-auto">
             Consistent problem solving on LeetCode with 170+ algorithmic problems solved across fundamental computer science topics.
           </p>
         </div>
@@ -47,7 +52,7 @@ export const StatsSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
           {/* Left: LeetCode Counter Panel */}
-          <div className="lg:col-span-5 glass-card p-6 sm:p-8 rounded-3xl bg-[#FAF8F5] border border-[#D9D6D2] flex flex-col justify-between space-y-6 text-left shadow-xs">
+          <div className="lg:col-span-5 glass-card p-6 sm:p-8 flex flex-col justify-between space-y-6 text-left">
             <div className="space-y-4">
               <div className="flex items-center justify-between border-b border-[#D9D6D2] pb-3">
                 <div className="flex items-center space-x-2">
@@ -115,7 +120,7 @@ export const StatsSection: React.FC = () => {
           </div>
 
           {/* Right: DSA Topic Distribution */}
-          <div className="lg:col-span-7 glass-card p-6 sm:p-8 rounded-3xl bg-[#FAF8F5] border border-[#D9D6D2] space-y-6 text-left shadow-xs">
+          <div className="lg:col-span-7 glass-card p-6 sm:p-8 space-y-6 text-left">
             <div className="flex items-center justify-between border-b border-[#D9D6D2] pb-3">
               <div className="flex items-center space-x-2">
                 <Layers className="w-5 h-5 text-[#2D6A4F]" />
@@ -149,7 +154,7 @@ export const StatsSection: React.FC = () => {
         </div>
 
         {/* GitHub Contribution Heatmap Card */}
-        <div className="glass-card p-6 sm:p-8 rounded-3xl bg-[#FAF8F5] border border-[#D9D6D2] space-y-6 text-left shadow-xs">
+        <div className="glass-card p-6 sm:p-8 space-y-6 text-left">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-[#D9D6D2] pb-3 gap-2">
             <div className="flex items-center space-x-2">
               <GitBranch className="w-5 h-5 text-[#2D6A4F]" />

@@ -23,8 +23,14 @@ export const ProjectsSection: React.FC = () => {
   });
 
   return (
-    <section id="projects" className="py-20 sm:py-28 relative bg-[#E9ECEF] border-t border-[rgba(33,37,41,0.08)]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+    <section id="projects" className="py-20 sm:py-28 relative bg-[#E9ECEF] border-t border-[rgba(33,37,41,0.08)] overflow-hidden">
+      {/* Background Grid & Ambient Glows for Glassmorphism Depth */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-50 pointer-events-none" />
+      <div className="absolute -top-20 -left-20 w-80 h-80 bg-gradient-to-tr from-[#CED4DA] to-[#ADB5BD] rounded-full blur-3xl opacity-40 pointer-events-none" />
+      <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-gradient-to-br from-[#DEE2E6] to-[#ADB5BD] rounded-full blur-3xl opacity-40 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-gradient-to-r from-[#D0D7DE] via-[#E2E8F0] to-[#CBD5E1] rounded-full blur-3xl opacity-30 pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 relative z-10">
         
         {/* Section Header */}
         <ScrollReveal direction="up">
@@ -45,7 +51,7 @@ export const ProjectsSection: React.FC = () => {
                   className={`px-4 py-1.5 rounded-full text-xs font-mono font-medium transition-all cursor-pointer ${
                     selectedCategory === cat
                       ? 'bg-[#212529] text-[#FFFFFF] font-bold shadow-xs border border-[#212529]'
-                      : 'bg-[#DEE2E6] text-[#495057] hover:bg-[#E9ECEF] hover:text-[#212529] border border-[rgba(33,37,41,0.08)]'
+                      : 'bg-[rgba(222,226,230,0.85)] text-[#495057] hover:bg-[#E9ECEF] hover:text-[#212529] border border-[rgba(255,255,255,0.8)] backdrop-blur-md'
                   }`}
                 >
                   {cat}
@@ -64,9 +70,9 @@ export const ProjectsSection: React.FC = () => {
               delay={(index % 3) * 0.12}
               className="flex flex-col"
             >
-              <div className="glass-card p-6 rounded-[18px] bg-[rgba(255,255,255,0.55)] border border-[rgba(33,37,41,0.08)] flex flex-col justify-between group h-full hover:border-[rgba(33,37,41,0.2)] transition-all text-left shadow-xs">
+              <div className="project-glass-card p-6 flex flex-col justify-between group h-full text-left">
                 {/* Header Image */}
-                <div className="relative h-48 w-full overflow-hidden rounded-[14px] bg-[#DEE2E6] border border-[rgba(33,37,41,0.08)]">
+                <div className="relative h-48 w-full overflow-hidden rounded-[14px] bg-[#DEE2E6] border border-[rgba(255,255,255,0.7)] shadow-inner">
                   <img
                     src={project.heroImage}
                     alt={project.title}
@@ -76,17 +82,17 @@ export const ProjectsSection: React.FC = () => {
                   
                   {/* Status Badge */}
                   <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
-                    <span className={`px-2.5 py-0.5 rounded-full text-[11px] font-semibold font-mono shadow-xs ${
+                    <span className={`px-2.5 py-1 rounded-full text-[11px] font-bold font-mono shadow-xs backdrop-blur-md ${
                       project.status === 'Award Winner'
-                        ? 'bg-[#212529] text-[#FFFFFF] font-bold'
-                        : 'bg-[#E9ECEF]/90 text-[#212529] border border-[rgba(33,37,41,0.08)]'
+                        ? 'bg-[#212529] text-[#FFFFFF] border border-[#212529]'
+                        : 'bg-[rgba(255,255,255,0.90)] text-[#212529] border border-[rgba(255,255,255,0.95)]'
                     }`}>
                       {project.status === 'Award Winner' && <Award className="w-3 h-3 inline mr-1 -mt-0.5 text-[#FFFFFF]" />}
                       {project.status}
                     </span>
                   </div>
 
-                  <div className="absolute bottom-3 right-3 text-[11px] font-mono font-medium bg-[#E9ECEF]/90 text-[#212529] px-2.5 py-0.5 rounded-full border border-[rgba(33,37,41,0.08)] backdrop-blur-md shadow-xs">
+                  <div className="absolute bottom-3 right-3 text-[11px] font-mono font-bold bg-[rgba(255,255,255,0.90)] text-[#212529] px-2.5 py-1 rounded-full border border-[rgba(255,255,255,0.95)] backdrop-blur-md shadow-xs">
                     {project.category}
                   </div>
                 </div>
@@ -94,13 +100,13 @@ export const ProjectsSection: React.FC = () => {
                 {/* Content Body */}
                 <div className="pt-5 flex-1 flex flex-col justify-between space-y-4 text-left">
                   <div className="space-y-2">
-                    <h3 className="text-xl font-bold text-[#212529] group-hover:text-[#343A40] transition-colors leading-snug font-heading">
+                    <h3 className="text-xl font-extrabold text-[#212529] group-hover:text-[#000000] transition-colors leading-snug font-heading tracking-tight">
                       {project.title}
                     </h3>
-                    <p className="text-xs font-mono font-semibold text-[#495057]">
+                    <p className="text-xs font-mono font-bold text-[#343A40]">
                       {project.tagline}
                     </p>
-                    <p className="text-xs text-[#495057] line-clamp-3 leading-relaxed pt-1">
+                    <p className="text-xs font-normal text-[#343A40] line-clamp-3 leading-relaxed pt-1">
                       {project.problemStatement}
                     </p>
 
@@ -109,13 +115,13 @@ export const ProjectsSection: React.FC = () => {
                       {project.tags.slice(0, 4).map((tag, tIdx) => (
                         <span
                           key={tIdx}
-                          className="px-2.5 py-0.5 rounded-[10px] text-[10px] font-mono font-medium bg-[#DEE2E6] text-[#212529] border border-[rgba(33,37,41,0.08)]"
+                          className="px-2.5 py-1 rounded-[10px] text-[10px] font-mono font-bold bg-[rgba(233,236,239,0.85)] text-[#212529] border border-[rgba(255,255,255,0.9)] backdrop-blur-xs shadow-2xs group-hover:bg-[#DEE2E6] transition-colors"
                         >
                           {tag}
                         </span>
                       ))}
                       {project.tags.length > 4 && (
-                        <span className="px-1.5 py-0.5 rounded text-[10px] font-mono text-[#6C757D]">
+                        <span className="px-2 py-1 rounded-[10px] text-[10px] font-mono font-bold bg-[rgba(233,236,239,0.75)] text-[#495057] border border-[rgba(255,255,255,0.85)]">
                           +{project.tags.length - 4}
                         </span>
                       )}
@@ -126,7 +132,7 @@ export const ProjectsSection: React.FC = () => {
                   <div className="pt-4 border-t border-[rgba(33,37,41,0.08)] flex items-center justify-between gap-2">
                     <button
                       onClick={() => setActiveModalProject(project)}
-                      className="w-full py-2.5 px-3 rounded-[12px] bg-[#212529] hover:bg-[#343A40] text-[#FFFFFF] font-bold text-xs flex items-center justify-center space-x-1 transition-all cursor-pointer border border-[#212529]"
+                      className="w-full py-2.5 px-3 rounded-[12px] bg-[#212529] hover:bg-[#343A40] text-[#FFFFFF] font-bold text-xs flex items-center justify-center space-x-1.5 transition-all cursor-pointer border border-[#212529] shadow-xs hover:shadow-md hover:scale-[1.01]"
                     >
                       <span>View Specs & Arch</span>
                       <ArrowRight className="w-3.5 h-3.5 text-[#FFFFFF]" />

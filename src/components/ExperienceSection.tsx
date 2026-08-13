@@ -5,8 +5,13 @@ import { ScrollReveal } from './ScrollReveal';
 
 export const ExperienceSection: React.FC = () => {
   return (
-    <section id="experience" className="py-20 sm:py-28 relative bg-[#DEE2E6] border-t border-[rgba(33,37,41,0.08)]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+    <section id="experience" className="py-20 sm:py-28 relative bg-[#DEE2E6] border-t border-[rgba(33,37,41,0.08)] overflow-hidden">
+      {/* Background Ambient Grid & Glows */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none" />
+      <div className="absolute -top-20 -left-20 w-80 h-80 bg-gradient-to-tr from-[#CED4DA] to-[#ADB5BD] rounded-full blur-3xl opacity-35 pointer-events-none" />
+      <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-gradient-to-br from-[#E9ECEF] to-[#ADB5BD] rounded-full blur-3xl opacity-35 pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 relative z-10">
         
         {/* Section Header */}
         <ScrollReveal direction="up">
@@ -24,7 +29,7 @@ export const ExperienceSection: React.FC = () => {
         <div className="space-y-8 max-w-4xl mx-auto">
           {WORK_EXPERIENCE_DATA.map((exp, index) => (
             <ScrollReveal key={exp.id} direction="up" delay={index * 0.15}>
-              <div className="glass-card p-8 rounded-[18px] space-y-6 text-left hover:border-[rgba(33,37,41,0.2)] transition-all bg-[rgba(255,255,255,0.55)] border border-[rgba(33,37,41,0.08)]">
+              <div className="glass-card p-8 space-y-6 text-left">
                 
                 {/* Header Row */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[rgba(33,37,41,0.08)] pb-5">

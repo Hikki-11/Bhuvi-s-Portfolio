@@ -73,8 +73,9 @@ export const AchievementsSection: React.FC = () => {
   return (
     <section id="achievements" className="py-20 sm:py-28 relative bg-[#E9ECEF] border-t border-[rgba(33,37,41,0.08)] overflow-hidden">
       
-      {/* Background Glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-[#DEE2E6]/50 rounded-full blur-3xl pointer-events-none" />
+      {/* Background Glows & Grid */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[550px] h-[550px] bg-gradient-to-r from-[#CED4DA] via-[#DEE2E6] to-[#ADB5BD] rounded-full blur-3xl opacity-35 pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 relative z-10">
         
@@ -105,7 +106,7 @@ export const AchievementsSection: React.FC = () => {
                   delay: index * 0.12,
                   ease: [0.16, 1, 0.3, 1]
                 }}
-                className="p-6 rounded-[18px] bg-[rgba(255,255,255,0.75)] glass-card border border-[rgba(33,37,41,0.08)] space-y-4 text-left shadow-xs hover:border-[rgba(33,37,41,0.2)] hover:shadow-md transition-all flex flex-col justify-between"
+                className="p-6 glass-card space-y-4 text-left flex flex-col justify-between"
               >
                 <div className="space-y-4">
                   {/* Top Header Badge & Date */}

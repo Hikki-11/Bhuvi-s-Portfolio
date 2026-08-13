@@ -13,8 +13,13 @@ export const AboutSection: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="py-20 sm:py-28 relative bg-[#E9ECEF] border-t border-[rgba(33,37,41,0.08)]">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <section id="about" className="py-20 sm:py-28 relative bg-[#E9ECEF] border-t border-[rgba(33,37,41,0.08)] overflow-hidden">
+      {/* Background Ambient Glows & Grid */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none" />
+      <div className="absolute -top-16 -right-16 w-72 h-72 bg-gradient-to-br from-[#CED4DA] to-[#ADB5BD] rounded-full blur-3xl opacity-35 pointer-events-none" />
+      <div className="absolute -bottom-16 -left-16 w-72 h-72 bg-gradient-to-tr from-[#DEE2E6] to-[#ADB5BD] rounded-full blur-3xl opacity-35 pointer-events-none" />
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
         
         {/* Section Header */}
         <ScrollReveal direction="up">
@@ -30,7 +35,7 @@ export const AboutSection: React.FC = () => {
 
         {/* Main Content Container */}
         <ScrollReveal direction="up" delay={0.15}>
-          <div className="glass-card p-6 sm:p-10 rounded-[20px] bg-[rgba(255,255,255,0.65)] border border-[rgba(33,37,41,0.08)] space-y-8 text-left shadow-xs backdrop-blur-md hover:border-[rgba(33,37,41,0.2)] transition-all">
+          <div className="glass-card p-6 sm:p-10 space-y-8 text-left shadow-md">
             
             {/* 1. Summary Statement */}
             <div className="space-y-3">

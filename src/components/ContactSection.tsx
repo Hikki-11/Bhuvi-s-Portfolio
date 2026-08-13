@@ -35,8 +35,13 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
   };
 
   return (
-    <section id="contact" className="py-20 sm:py-28 relative bg-[#E9ECEF] border-t border-[rgba(33,37,41,0.08)]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+    <section id="contact" className="py-20 sm:py-28 relative bg-[#E9ECEF] border-t border-[rgba(33,37,41,0.08)] overflow-hidden">
+      {/* Background Ambient Grid & Glows */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none" />
+      <div className="absolute -top-20 -left-20 w-80 h-80 bg-gradient-to-tr from-[#CED4DA] to-[#ADB5BD] rounded-full blur-3xl opacity-35 pointer-events-none" />
+      <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-gradient-to-br from-[#DEE2E6] to-[#ADB5BD] rounded-full blur-3xl opacity-35 pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 relative z-10">
         
         {/* Section Header */}
         <ScrollReveal direction="up">
@@ -56,7 +61,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
           <ScrollReveal direction="left" delay={0.15} className="lg:col-span-5 space-y-4">
             
             {/* Email */}
-            <div className="glass-card p-4 rounded-[18px] bg-[rgba(255,255,255,0.75)] border border-[rgba(33,37,41,0.08)] space-y-3 text-left shadow-xs backdrop-blur-md">
+            <div className="glass-card p-4 space-y-3 text-left">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
                   <div className="p-2.5 rounded-[12px] bg-[#DEE2E6] text-[#212529] border border-[rgba(33,37,41,0.08)]">
@@ -81,7 +86,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
             </div>
 
             {/* Phone */}
-            <div className="glass-card p-4 rounded-[18px] bg-[rgba(255,255,255,0.75)] border border-[rgba(33,37,41,0.08)] space-y-3 text-left shadow-xs backdrop-blur-md">
+            <div className="glass-card p-4 space-y-3 text-left">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
                   <div className="p-2.5 rounded-[12px] bg-[#DEE2E6] text-[#212529] border border-[rgba(33,37,41,0.08)]">
@@ -111,7 +116,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
                 href={PROFILE_DATA.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass-card p-3.5 rounded-[18px] bg-[rgba(255,255,255,0.75)] border border-[rgba(33,37,41,0.08)] hover:border-[#212529]/40 flex items-center space-x-3 transition-all text-left shadow-xs backdrop-blur-md"
+                className="glass-card p-3.5 flex items-center space-x-3 transition-all text-left"
               >
                 <div className="p-2 rounded-[10px] bg-[#DEE2E6] text-[#212529] border border-[rgba(33,37,41,0.08)] shrink-0">
                   <Linkedin className="w-4 h-4 text-[#212529]" />
@@ -126,7 +131,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
                 href={PROFILE_DATA.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass-card p-3.5 rounded-[18px] bg-[rgba(255,255,255,0.75)] border border-[rgba(33,37,41,0.08)] hover:border-[#212529]/40 flex items-center space-x-3 transition-all text-left shadow-xs backdrop-blur-md"
+                className="glass-card p-3.5 flex items-center space-x-3 transition-all text-left"
               >
                 <div className="p-2 rounded-[10px] bg-[#DEE2E6] text-[#212529] border border-[rgba(33,37,41,0.08)] shrink-0">
                   <Github className="w-4 h-4 text-[#212529]" />
@@ -139,7 +144,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
             </div>
 
             {/* Resume Callout */}
-            <div className="glass-card p-4 rounded-[18px] bg-[rgba(255,255,255,0.75)] border border-[rgba(33,37,41,0.08)] flex items-center justify-between text-left shadow-xs backdrop-blur-md">
+            <div className="glass-card p-4 flex items-center justify-between text-left">
               <div className="space-y-0.5">
                 <div className="text-xs font-bold text-[#212529]">Curriculum Vitae</div>
                 <div className="text-[11px] font-mono text-[#6C757D]">View or download PDF resume</div>
@@ -160,7 +165,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ onOpenResume }) 
 
           {/* Right Side: Contact Message Form */}
           <ScrollReveal direction="right" delay={0.25} className="lg:col-span-7">
-            <div className="glass-card p-6 sm:p-8 rounded-[18px] bg-[rgba(255,255,255,0.75)] border border-[rgba(33,37,41,0.08)] space-y-6 text-left shadow-xs backdrop-blur-md">
+            <div className="glass-card p-6 sm:p-8 space-y-6 text-left">
               {submitted ? (
                 <div className="p-6 rounded-[14px] bg-[#DEE2E6] border border-[rgba(33,37,41,0.08)] text-center space-y-2 animate-fade-in">
                   <div className="w-10 h-10 rounded-full bg-[#212529] text-[#FFFFFF] flex items-center justify-center mx-auto font-bold">

@@ -5,8 +5,13 @@ import { ScrollReveal } from './ScrollReveal';
 
 export const CertificationsSection: React.FC = () => {
   return (
-    <section id="certifications" className="py-20 sm:py-28 relative bg-[#DEE2E6] border-t border-[rgba(33,37,41,0.08)]">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+    <section id="certifications" className="py-20 sm:py-28 relative bg-[#DEE2E6] border-t border-[rgba(33,37,41,0.08)] overflow-hidden">
+      {/* Background Ambient Grid & Glows */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none" />
+      <div className="absolute -top-20 -right-20 w-80 h-80 bg-gradient-to-br from-[#CED4DA] to-[#ADB5BD] rounded-full blur-3xl opacity-35 pointer-events-none" />
+      <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-gradient-to-tr from-[#E9ECEF] to-[#ADB5BD] rounded-full blur-3xl opacity-35 pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 relative z-10">
         
         {/* Section Header */}
         <ScrollReveal direction="up">
@@ -25,7 +30,7 @@ export const CertificationsSection: React.FC = () => {
           {CERTIFICATIONS_DATA.map((cert, index) => (
             <ScrollReveal key={cert.id} direction="up" delay={(index % 3) * 0.1}>
               <div
-                className="glass-card p-6 rounded-[18px] border border-[rgba(33,37,41,0.08)] bg-[rgba(255,255,255,0.55)] glass-card-hover flex flex-col justify-between space-y-4 group h-full hover:border-[rgba(33,37,41,0.2)] transition-all text-left"
+                className="glass-card p-6 flex flex-col justify-between space-y-4 group h-full text-left"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">

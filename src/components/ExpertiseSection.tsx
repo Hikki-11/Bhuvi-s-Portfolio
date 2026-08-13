@@ -66,8 +66,9 @@ export const ExpertiseSection: React.FC = () => {
   return (
     <section id="skills" className="py-20 sm:py-28 relative bg-[#E9ECEF] border-t border-[rgba(33,37,41,0.08)] overflow-hidden">
       
-      {/* Background Ambient Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#DEE2E6]/50 rounded-full blur-3xl pointer-events-none" />
+      {/* Background Ambient Glow & Grid */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-gradient-to-r from-[#CED4DA] via-[#DEE2E6] to-[#ADB5BD] rounded-full blur-3xl opacity-35 pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 relative z-10">
         
@@ -127,7 +128,7 @@ export const ExpertiseSection: React.FC = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, margin: "-50px" }}
                         transition={{ duration: 0.5, ease: "easeOut" }}
-                        className="space-y-2.5 text-left md:text-right"
+                        className="glass-card p-5 space-y-2.5 text-left md:text-right"
                       >
                         {/* Header Pills */}
                         <div className="flex items-center space-x-2 md:justify-end flex-wrap gap-y-1">
@@ -177,7 +178,7 @@ export const ExpertiseSection: React.FC = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true, margin: "-50px" }}
                         transition={{ duration: 0.5, ease: "easeOut" }}
-                        className="space-y-2.5 text-left"
+                        className="glass-card p-5 space-y-2.5 text-left"
                       >
                         {/* Header Pills */}
                         <div className="flex items-center space-x-2 flex-wrap gap-y-1">

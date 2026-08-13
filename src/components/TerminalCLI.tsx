@@ -190,12 +190,16 @@ export const TerminalCLI: React.FC<TerminalCLIProps> = ({ onToggleMatrix }) => {
   };
 
   return (
-    <section id="terminal" className="py-16 relative bg-[#E9ECEF] border-t border-[rgba(33,37,41,0.08)]">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="terminal" className="py-16 relative bg-[#E9ECEF] border-t border-[rgba(33,37,41,0.08)] overflow-hidden">
+      {/* Background Ambient Grid & Glows */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none" />
+      <div className="absolute -top-20 -right-20 w-80 h-80 bg-gradient-to-br from-[#CED4DA] to-[#ADB5BD] rounded-full blur-3xl opacity-35 pointer-events-none" />
+
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center space-y-3 mb-8">
-          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#DEE2E6] border border-[rgba(33,37,41,0.08)] text-[#212529] font-mono text-xs font-semibold">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[rgba(255,255,255,0.8)] border border-[rgba(255,255,255,0.9)] text-[#212529] font-mono text-xs font-semibold backdrop-blur-md">
             <TerminalIcon className="w-3.5 h-3.5" />
             <span>Developer Shell Terminal</span>
           </div>
@@ -208,7 +212,7 @@ export const TerminalCLI: React.FC<TerminalCLIProps> = ({ onToggleMatrix }) => {
         </div>
 
         {/* Terminal Window Box */}
-        <div className="glass-card rounded-2xl border border-[rgba(33,37,41,0.08)] bg-[rgba(255,255,255,0.55)] shadow-sm overflow-hidden text-left">
+        <div className="glass-card rounded-2xl overflow-hidden text-left">
           
           {/* Top Bar */}
           <div className="bg-[#DEE2E6] px-4 py-3 border-b border-[rgba(33,37,41,0.08)] flex items-center justify-between">
