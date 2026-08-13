@@ -7,50 +7,6 @@ interface HeroProps {
   onOpenResume: () => void;
 }
 
-const TYPEWRITER_PHRASES = [
-  'Java Backend Developer',
-  'Spring Boot Developer',
-  'REST API Developer'
-];
-
-const SubtitleTypewriter: React.FC = () => {
-  const [displayText, setDisplayText] = useState('');
-  const [phraseIndex, setPhraseIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  useEffect(() => {
-    const currentPhrase = TYPEWRITER_PHRASES[phraseIndex];
-    let timer: NodeJS.Timeout;
-
-    if (!isDeleting && displayText === currentPhrase) {
-      timer = setTimeout(() => {
-        setIsDeleting(true);
-      }, 1500);
-    } else if (isDeleting && displayText === '') {
-      setIsDeleting(false);
-      setPhraseIndex((prev) => (prev + 1) % TYPEWRITER_PHRASES.length);
-    } else {
-      const speed = isDeleting ? 40 : 80;
-      timer = setTimeout(() => {
-        setDisplayText((prev) =>
-          isDeleting
-            ? currentPhrase.substring(0, prev.length - 1)
-            : currentPhrase.substring(0, prev.length + 1)
-        );
-      }, speed);
-    }
-
-    return () => clearTimeout(timer);
-  }, [displayText, isDeleting, phraseIndex]);
-
-  return (
-    <div className="text-[10px] font-mono text-[#6C757D] leading-tight h-3.5 flex items-center whitespace-nowrap overflow-hidden">
-      <span>{displayText}</span>
-      <span className="inline-block ml-0.5 text-[#6C757D] font-mono font-normal animate-pulse">|</span>
-    </div>
-  );
-};
-
 export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
   const nameToType = PROFILE_DATA.name;
   const [typedName, setTypedName] = useState('');
@@ -196,8 +152,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
                   <Server className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-[#212529] font-heading leading-tight">Backend Architecture</div>
-                  <SubtitleTypewriter />
+                  <div className="text-sm sm:text-base font-bold text-[#212529] font-heading leading-tight">Backend Architecture</div>
                 </div>
               </div>
             </div>
