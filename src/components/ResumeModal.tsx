@@ -85,31 +85,24 @@ Course Registration System                       Java · Spring Boot · Hibernat
 • Built student registration workflows and administrator course management capabilities with dynamic seat tracking.
 • Designed structured user interfaces and form validation for seamless course enrollment and record management.
 
-Micro Failure Whisperer (Ongoing)           Python · Machine Learning · Predictive Maintenance
-• Developing an AI-powered predictive maintenance system to detect micro-level 
-  machine failures using sensor and vibration data.
-• Applying anomaly detection techniques to identify early signs of equipment 
-  degradation before breakdowns occur.
-• Designing a real-time monitoring pipeline to process sensor data and generate 
-  predictive maintenance alerts.
-• Building a scalable architecture capable of supporting industrial machine 
-  health monitoring applications.
-
-Digital Smell (Ongoing)                            IoT · Gas Sensors · Embedded AI
-• Developing an IoT-based gas leakage detection system using high-sensitivity 
-  gas sensors and embedded AI.
-• Implementing real-time monitoring and anomaly detection to identify minute gas 
-  leakages accurately.
-• Designing an intelligent alert system to improve industrial safety through early 
-  hazard detection.
-• Building an embedded solution for continuous environmental monitoring in 
-  safety-critical applications.
+AI-Powered Underground Mine Safety, Monitoring & Rescue System (SIH 2026 – SIH26039)
+• Developed an AI-powered mine rescue rover designed for hazardous underground coal mine environments.
+• Built and assembled a four-wheel mobile rover chassis with ESP32, L298N driver, MQ-135, DHT22, and HC-SR04 sensors.
+• Designed and validated the rover power system using Li-ion battery pack for 3–4 hours of continuous exploration runtime.
+• Engineered a thermoelectric generator (TEG) energy-harvesting system with hybrid supercapacitor storage for legacy mine zones.
+• Collaborated on architecture connecting rover/sensor nodes to a predictive AI correlation engine and live React dashboard.
 
 ScriptGuard AI (Ongoing)                           Python · Computer Vision · OCR
 • Developing an intelligent paper-scanning mechanism for automated document 
   digitization and verification.
 • Integrating OCR and image-processing techniques to extract, validate, and 
   organize scanned content.
+
+Build Club – Hands-on Engineering & Innovation (Completed)
+• Engineered hands-on hardware prototypes across microcontrollers, sensor interfacing, 
+  motor drivers, DC-DC power regulation circuits, and kinematic mechanical linkages.
+• Developed practical expertise in circuit breadboarding, firmware debugging, and 
+  electro-mechanical testing.
 
 --------------------------------------------------------------------------------
 TECHNICAL SKILLS
@@ -146,11 +139,9 @@ Smart India Hackathon (SIH)
 • Collaborated with team members to design an innovative solution addressing 
   real-world agricultural challenges.
 
-MSME
-• Presented Micro Failure Whisperer and Digital Smell as AI-driven industrial 
-  safety and predictive maintenance solutions.
-• Demonstrated the application of machine learning and IoT technologies for 
-  early fault detection and industrial monitoring.
+Build Club — Hands-on Engineering & Innovation
+• Gained hands-on hardware engineering experience across microcontrollers, sensor interfacing, motor drivers, power conversion circuitry, and mechanical linkages.
+• Built practical expertise through circuit breadboarding, firmware debugging, electrical load testing, and iterative mechanical prototyping.
 
 Snowflake Workshop — 1 Week
 • Completed hands-on training covering Snowflake architecture, cloud data 
@@ -361,27 +352,15 @@ ACHIEVEMENTS
 
                   <div>
                     <div className="flex justify-between items-baseline font-bold text-[#212529]">
-                      <span>Micro Failure Whisperer <span className="font-normal text-xs text-[#6C757D]">(Ongoing)</span></span>
-                      <span className="text-xs font-mono text-[#6C757D] font-normal">Python · Machine Learning · Predictive Maintenance</span>
+                      <span>AI-Powered Underground Mine Safety, Monitoring & Rescue System <span className="font-normal text-xs text-[#6C757D]">(SIH 2026 – SIH26039)</span></span>
+                      <span className="text-xs font-mono text-[#6C757D] font-normal">ESP32 · Robotics · AI/ML · IoT</span>
                     </div>
                     <ul className="list-disc list-outside pl-4 text-xs text-[#343A40] space-y-0.5 mt-1">
-                      <li>Developing an AI-powered predictive maintenance system to detect micro-level machine failures using sensor and vibration data.</li>
-                      <li>Applying anomaly detection techniques to identify early signs of equipment degradation before breakdowns occur.</li>
-                      <li>Designing a real-time monitoring pipeline to process sensor data and generate predictive maintenance alerts.</li>
-                      <li>Building a scalable architecture capable of supporting industrial machine health monitoring applications.</li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <div className="flex justify-between items-baseline font-bold text-[#212529]">
-                      <span>Digital Smell <span className="font-normal text-xs text-[#6C757D]">(Ongoing)</span></span>
-                      <span className="text-xs font-mono text-[#6C757D] font-normal">IoT · Gas Sensors · Embedded AI</span>
-                    </div>
-                    <ul className="list-disc list-outside pl-4 text-xs text-[#343A40] space-y-0.5 mt-1">
-                      <li>Developing an IoT-based gas leakage detection system using high-sensitivity gas sensors and embedded AI.</li>
-                      <li>Implementing real-time monitoring and anomaly detection to identify minute gas leakages accurately.</li>
-                      <li>Designing an intelligent alert system to improve industrial safety through early hazard detection.</li>
-                      <li>Building an embedded solution for continuous environmental monitoring in safety-critical applications.</li>
+                      <li>Developed an AI-powered mine rescue rover designed for hazardous underground coal mine environments.</li>
+                      <li>Built and assembled a four-wheel mobile rover chassis integrating ESP32, L298N, MQ-135, DHT22, and HC-SR04 sensors.</li>
+                      <li>Designed and validated rover power system using Li-ion battery pack for 3–4 hours of continuous exploration runtime.</li>
+                      <li>Engineered thermoelectric generator (TEG) energy-harvesting system with hybrid supercapacitor storage for off-grid legacy mine zones.</li>
+                      <li>Collaborated on system architecture connecting rover data to a predictive AI correlation engine and live control dashboard.</li>
                     </ul>
                   </div>
 
@@ -393,6 +372,17 @@ ACHIEVEMENTS
                     <ul className="list-disc list-outside pl-4 text-xs text-[#343A40] space-y-0.5 mt-1">
                       <li>Developing an intelligent paper-scanning mechanism for automated document digitization and verification.</li>
                       <li>Integrating OCR and image-processing techniques to extract, validate, and organize scanned content.</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <div className="flex justify-between items-baseline font-bold text-[#212529]">
+                      <span>Build Club – Hands-on Engineering & Innovation <span className="font-normal text-xs text-[#6C757D]">(Completed)</span></span>
+                      <span className="text-xs font-mono text-[#6C757D] font-normal">ESP32 · Robotics · Power Electronics · Kinematics</span>
+                    </div>
+                    <ul className="list-disc list-outside pl-4 text-xs text-[#343A40] space-y-0.5 mt-1">
+                      <li>Gained hands-on experience developing hardware prototypes across microcontrollers, motor drivers, power conversion circuits, and kinematic linkages.</li>
+                      <li>Developed practical expertise through breadboard circuit assembly, firmware debugging, load testing, and physical mechanism fabrication.</li>
                     </ul>
                   </div>
                 </div>
@@ -455,10 +445,10 @@ ACHIEVEMENTS
                   </div>
 
                   <div>
-                    <p className="font-bold">MSME</p>
+                    <p className="font-bold">Build Club — Hands-on Engineering & Innovation</p>
                     <ul className="list-disc list-outside pl-4 text-xs text-[#343A40] space-y-0.5 mt-0.5">
-                      <li>Presented Micro Failure Whisperer and Digital Smell as AI-driven industrial safety and predictive maintenance solutions.</li>
-                      <li>Demonstrated the application of machine learning and IoT technologies for early fault detection and industrial monitoring.</li>
+                      <li>Gained hands-on engineering experience in microcontrollers, sensor interfacing, motor drivers, power conversion circuitry, and mechanical linkages.</li>
+                      <li>Developed practical expertise through breadboard circuit assembly, firmware debugging, load testing, and physical mechanism fabrication.</li>
                     </ul>
                   </div>
 

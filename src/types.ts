@@ -13,12 +13,14 @@ export interface WorkExperience {
 export interface ProjectCaseStudy {
   id: string;
   title: string;
+  cardTitle?: string;
   tagline: string;
-  category: 'Backend & Cloud' | 'IoT & Embedded AI' | 'Machine Learning' | 'Web & Fullstack';
-  status: 'Completed' | 'Ongoing' | 'Award Winner';
+  category: 'Backend & Cloud' | 'IoT & Embedded AI' | 'Machine Learning' | 'Web & Fullstack' | 'AI, IoT & Robotics' | string;
+  categoryBadge?: string;
+  status: 'Completed' | 'Ongoing' | 'Award Winner' | 'SIH 2026' | string;
   featured: boolean;
   heroImage: string;
-  githubUrl: string;
+  githubUrl?: string;
   liveDemoUrl?: string;
   tags: string[];
   problemStatement: string;
@@ -32,6 +34,7 @@ export interface ProjectCaseStudy {
   technicalChallenges: string[];
   outcomes: string[];
   sdgImpact?: string;
+  subProjects?: ProjectCaseStudy[];
 }
 
 export interface SkillCategory {

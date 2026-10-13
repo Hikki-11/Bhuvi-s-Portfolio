@@ -29,13 +29,13 @@ export const AchievementsSection: React.FC = () => {
       icon: Trophy
     },
     {
-      id: 'msme',
-      title: 'MSME Industrial Safety Showcase Presenter',
-      category: 'Government Innovation Showcase',
+      id: 'build-club',
+      title: 'Build Club – Hands-on Engineering & Innovation',
+      category: 'Hands-on Engineering',
       date: '2025',
-      badge: 'Industrial Innovation',
-      description: 'Presented "Micro Failure Whisperer" (Predictive Maintenance AI) and "Digital Smell" (Gas Leakage Safety Unit) at the MSME regional industrial showcase.',
-      impact: 'Selected for demonstrating low-cost edge AI safety solutions for manufacturing facilities.',
+      badge: 'Engineering & Innovation',
+      description: 'Gained hands-on engineering experience through intensive hardware prototyping across microcontrollers, sensor interfacing, motor drivers, DC-DC power regulation circuits, and kinematic linkages. Developed practical skills by breadboarding circuits, debugging firmware, testing electrical loads, and assembling functional mechanisms.',
+      impact: 'Strengthened practical competencies in hardware-software integration, circuit diagnostics, and multidisciplinary prototyping.',
       icon: Award
     },
     {
@@ -43,7 +43,7 @@ export const AchievementsSection: React.FC = () => {
       title: 'Smart India Hackathon (SIH) Participant',
       category: 'National Competition',
       date: '2025',
-      badge: 'National Finalist Project',
+      badge: 'National Finalist',
       description: 'Designed an automated pesticide sprinkler system with microcontroller logic to reduce chemical pesticide wastage and improve crop safety.',
       impact: 'Collaborated on hardware control logic addressing real-world agricultural problems.',
       icon: Target

@@ -1,4 +1,10 @@
 import { WorkExperience, ProjectCaseStudy, SkillCategory, TimelineItem, CertificationItem, DSAStats } from '../types';
+import mineRescueRoverImg from '../assets/images/mine_rescue_rover_1790257437713.jpg';
+import soundRushImg from '../assets/images/project1_sound_rush.jpg';
+import mecaRushImg from '../assets/images/project2_mecarush.jpg';
+import voltDropImg from '../assets/images/project3_voltdrop.jpg';
+import wipeMotionImg from '../assets/images/project4_wipemotion.jpg';
+import buildClubShowcaseImg from '../assets/images/build_club_projects_collage_1791592355801.jpg';
 
 export const WORK_EXPERIENCE_DATA: WorkExperience[] = [
   {
@@ -34,6 +40,177 @@ export const PROFILE_DATA = {
   leetcode: 'https://leetcode.com/u/BHUVANESASN_N/',
   leetcodeCount: 170,
 };
+
+export const BUILD_CLUB_PROJECTS_DATA: ProjectCaseStudy[] = [
+  {
+    id: 'sound-rush',
+    title: 'Sound Rush – Run the Circle!',
+    cardTitle: 'Sound Rush – Run the Circle!',
+    tagline: 'ESP32-C6 Sound-Level Detection & RGB Visualization',
+    category: 'Build Club Projects',
+    categoryBadge: 'Embedded Systems & Electronics',
+    status: 'Completed',
+    featured: true,
+    heroImage: soundRushImg,
+    tags: ['ESP32-C6', 'Microphone Module', 'RGB LEDs', 'Embedded Systems'],
+    problemStatement: 'Developed an interactive sound-level detection system using an ESP32-C6 and microphone module, connected to a 16-LED RGB visualizer. Implemented circular LED animations with color-coded visual feedback representing sound intensity levels from low to very high.',
+    solutionApproach: 'Sampled acoustic signal peaks using the microphone sensor module connected to the ESP32-C6 analog-to-digital converter. Engineered an animated circular state machine that dynamically drives 16 individually addressable RGB LEDs with responsive color gradients.',
+    architectureDiagram: {
+      title: 'Sound Rush ESP32-C6 Acoustic Telemetry & Circular LED Topology',
+      nodes: [
+        { id: '1', label: 'Microphone Module (Analog Acoustic Sense)', type: 'sensor' },
+        { id: '2', label: 'ESP32-C6 ADC & Threshold Discriminator', type: 'hardware' },
+        { id: '3', label: 'Dynamic Level Mapping State Engine', type: 'backend' },
+        { id: '4', label: '16-LED RGB Circular Visualizer', type: 'ui' },
+      ],
+      connections: [
+        { from: '1', to: '2', label: 'Analog Audio Voltage' },
+        { from: '2', to: '3', label: 'Discrete Sound Levels' },
+        { from: '3', to: '4', label: 'High-Speed RGB Pixel Bus' },
+      ],
+    },
+    features: [
+      'Sound-level detection using a microphone module.',
+      '16-LED RGB visualizer.',
+      'Circular LED animation.',
+      'Color-coded indication of sound intensity.',
+    ],
+    technicalChallenges: [
+      'Calibrating ambient baseline room noise vs. transient acoustic peaks',
+      'Maintaining zero-latency LED frame updates without blocking analog sampling',
+    ],
+    outcomes: [
+      'Successfully verified real-time circular sound intensity visualization',
+      'Completed functional prototype demonstration for Build Club Showcase',
+    ],
+  },
+  {
+    id: 'mecarush',
+    title: 'MecaRush – Move Beyond Limits!',
+    cardTitle: 'MecaRush – Move Beyond Limits!',
+    tagline: 'Four-Wheel Mecanum Robot with Wireless Web Control',
+    category: 'Build Club Projects',
+    categoryBadge: 'Robotics & Embedded Systems',
+    status: 'Completed',
+    featured: true,
+    heroImage: mecaRushImg,
+    tags: ['ESP32-C6', 'Mecanum Wheels', 'L298N', 'DC Motors', 'Web Control'],
+    problemStatement: 'Built a four-wheel Mecanum robot powered by an ESP32-C6, two L298N motor drivers, and four DC motors. Implemented wireless control through a custom joystick-style web interface, enabling forward, backward, lateral, diagonal, and rotational movement.',
+    solutionApproach: 'Designed a four-wheel omnidirectional chassis with 45-degree angled roller Mecanum wheels. Created an asynchronous web server on the ESP32-C6 that maps 2D vector joystick inputs into independent PWM duty cycles across dual dual-H-bridge L298N motor drivers.',
+    architectureDiagram: {
+      title: 'MecaRush Kinematic Vector Control & Motor Driver Architecture',
+      nodes: [
+        { id: '1', label: 'Wireless Joystick Web Interface', type: 'ui' },
+        { id: '2', label: 'ESP32-C6 Wi-Fi Access Point & Server', type: 'backend' },
+        { id: '3', label: 'Dual L298N Dual H-Bridge Drivers', type: 'hardware' },
+        { id: '4', label: '4x DC Motors with Mecanum Wheels', type: 'hardware' },
+      ],
+      connections: [
+        { from: '1', to: '2', label: 'Touch Joystick Packets' },
+        { from: '2', to: '3', label: 'PWM Kinematic Direction Signals' },
+        { from: '3', to: '4', label: 'High-Current Motor Drive' },
+      ],
+    },
+    features: [
+      'Four-wheel Mecanum robot assembly.',
+      'Dual L298N motor-driver integration.',
+      'Wireless joystick-style web interface.',
+      'Forward, backward, lateral, diagonal, and rotational movement.',
+    ],
+    technicalChallenges: [
+      'Configuring proper motor phase polarity for omnidirectional translation vectors',
+      'Handling sudden peak current spikes across dual motor drivers under rapid direction changes',
+    ],
+    outcomes: [
+      'Achieved responsive omnidirectional movement (lateral strafe, diagonal crawl, pivot turns)',
+      'Delivered seamless wireless control via mobile browser without external apps',
+    ],
+  },
+  {
+    id: 'voltdrop',
+    title: 'VoltDrop – DC-DC Buck Converter',
+    cardTitle: 'VoltDrop – DC-DC Buck Converter',
+    tagline: '24V DC to Approximately 12V DC Conversion',
+    category: 'Build Club Projects',
+    categoryBadge: 'Power Electronics',
+    status: 'Completed',
+    featured: true,
+    heroImage: voltDropImg,
+    tags: ['LM2575-ADJ', 'DC-DC Converter', 'Power Electronics', 'Circuit Design'],
+    problemStatement: 'Designed and tested a switching buck converter using the LM2575-ADJ regulator to step down a 24V DC input to approximately 12V DC. Verified the output voltage using a digital multimeter and successfully powered a 12V DC motor.',
+    solutionApproach: 'Engineered a high-efficiency step-down regulator circuit based on the LM2575-ADJ switching IC. Calculated feedback resistors, selected a fast-recovery Schottky diode and toroidal power inductor, and filtered output ripple with low-ESR capacitors.',
+    architectureDiagram: {
+      title: 'VoltDrop LM2575-ADJ Step-Down Buck Converter Power Stage',
+      nodes: [
+        { id: '1', label: '24V DC Bench Power Supply Input', type: 'hardware' },
+        { id: '2', label: 'LM2575-ADJ Switching Regulator & Inductor', type: 'hardware' },
+        { id: '3', label: 'Schottky Diode & LC Low-Pass Filter', type: 'hardware' },
+        { id: '4', label: 'Digital Multimeter & 12V DC Motor Load', type: 'ui' },
+      ],
+      connections: [
+        { from: '1', to: '2', label: '24V DC Raw Rail' },
+        { from: '2', to: '3', label: 'High-Frequency Switched Energy' },
+        { from: '3', to: '4', label: 'Stabilized ~12V DC Motor Power' },
+      ],
+    },
+    features: [
+      'Switching buck-converter design.',
+      '24V DC input and approximately 12V DC output.',
+      'Output verification using a digital multimeter.',
+      'Demonstration using a 12V DC motor.',
+    ],
+    technicalChallenges: [
+      'Selecting optimal inductor inductance and current rating to prevent magnetic core saturation',
+      'Minimizing voltage drop and switching ripple during initial motor inrush current',
+    ],
+    outcomes: [
+      'Accurately achieved ~12V DC regulated output verified with digital multimeter',
+      'Successfully sustained smooth motor spin under load without overheating',
+    ],
+  },
+  {
+    id: 'wipemotion',
+    title: 'WipeMotion – Four-Bar Linkage Mechanism',
+    cardTitle: 'WipeMotion – Four-Bar Linkage Mechanism',
+    tagline: 'Windshield Wiper Mechanism Demonstration',
+    category: 'Build Club Projects',
+    categoryBadge: 'Mechanical Engineering',
+    status: 'Completed',
+    featured: true,
+    heroImage: wipeMotionImg,
+    tags: ['Mechanical Design', 'Four-Bar Linkage', 'Motion Transmission', 'Prototyping'],
+    problemStatement: 'Assembled a four-bar linkage mechanism demonstrating the working principle of an automotive windshield wiper. Explored mechanical linkages, pivot joints, motion transmission, and the conversion of rotational input into oscillating output motion.',
+    solutionApproach: 'Fabricated and aligned a planar four-bar crank-rocker mechanism. Transmitted continuous rotational power from an input crank arm through a connecting coupler bar to drive an oscillating rocker arm representing a windshield wiper blade assembly.',
+    architectureDiagram: {
+      title: 'WipeMotion Four-Bar Linkage Kinematic Transmission Model',
+      nodes: [
+        { id: '1', label: 'Rotary Crank Driver Link (Input)', type: 'hardware' },
+        { id: '2', label: 'Connecting Coupler Rod', type: 'hardware' },
+        { id: '3', label: 'Oscillating Rocker Pivot Link', type: 'hardware' },
+        { id: '4', label: 'Wiper Blade & Sweeping Arc Output', type: 'ui' },
+      ],
+      connections: [
+        { from: '1', to: '2', label: 'Continuous 360° Rotary Input' },
+        { from: '2', to: '3', label: 'Dynamic Planar Force Transfer' },
+        { from: '3', to: '4', label: 'Reciprocating Wiper Sweep Motion' },
+      ],
+    },
+    features: [
+      'Four-bar linkage assembly.',
+      'Study of pivot joints and mechanical connections.',
+      'Demonstration of rotational-to-oscillating motion.',
+      'Exploration of the working principle of a windshield wiper.',
+    ],
+    technicalChallenges: [
+      'Eliminating mechanical binding and dead centers through precise link length ratio calculation',
+      'Maintaining low friction and minimal play in custom pivot joint bushings',
+    ],
+    outcomes: [
+      'Demonstrated reliable continuous conversion from rotation to oscillating wiping motion',
+      'Clear hands-on demonstration of classical mechanical engineering kinematics',
+    ],
+  },
+];
 
 export const PROJECTS_DATA: ProjectCaseStudy[] = [
   {
@@ -166,96 +343,71 @@ export const PROJECTS_DATA: ProjectCaseStudy[] = [
     ],
   },
   {
-    id: 'micro-failure-whisperer',
-    title: 'Micro Failure Whisperer',
-    tagline: 'AI-Powered Industrial Predictive Maintenance System for Early Fault Detection',
-    category: 'Machine Learning',
-    status: 'Ongoing',
+    id: 'ai-mine-safety-rescue',
+    title: 'AI-Powered Underground Mine Safety, Monitoring & Rescue System',
+    cardTitle: 'AI-Powered Underground Mine Safety,\nMonitoring & Rescue System',
+    tagline: 'SIH 2026 – SIH26039',
+    category: 'AI, IoT & Robotics',
+    categoryBadge: 'AI • IoT • Robotics',
+    status: 'SIH 2026',
     featured: true,
-    heroImage: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop',
-    githubUrl: 'https://github.com/Hikki-11/micro-failure-whisperer',
-    tags: ['Python', 'Machine Learning', 'Predictive Maintenance', 'Vibration Analysis', 'Anomaly Detection', 'Industrial IoT'],
-    problemStatement: 'Industrial machinery experiences micro-vibrations and acoustic friction harmonics long before catastrophic breakdown occurs. Traditional threshold alarms trigger only after physical damage has taken place, leading to unexpected factory downtime costing thousands per hour.',
-    solutionApproach: 'Engineered a real-time sensor telemetry pipeline utilizing ML anomaly detection (Isolation Forests & Autoencoders). The system continuously samples vibration amplitude, frequency harmonics, and thermal degradation data to forecast mechanical failures hours or days before breakdown.',
+    heroImage: mineRescueRoverImg,
+    githubUrl: 'https://github.com/Hikki-11/ai-mine-safety-rescue',
+    tags: [
+      'ESP32',
+      'L298N',
+      'MQ-135',
+      'DHT22',
+      'HC-SR04',
+      'LoRa SX1278',
+      'TEG',
+      'Li-ion Battery',
+      'Supercapacitor',
+      'Laser & Radar Sensing',
+      'React.js',
+      'AI/ML'
+    ],
+    problemStatement: 'An AI-powered underground mine safety, monitoring, and rescue system developed for Smart India Hackathon 2026 (SIH26039), designed to explore hazardous underground coal mine environments, detect toxic gases and environmental hazards, identify obstacles and potential structural anomalies, and relay live sensor data to a surface control station.',
+    solutionApproach: 'Designed and engineered an AI-powered 4-wheel mobile rescue rover chassis integrated with long-range LoRa SX1278 telemetry and TEG energy-harvesting sensor nodes. The system connects multi-gas, climatic, and obstacle sensors to a predictive AI correlation engine and surface control dashboard for proactive disaster mitigation.',
     architectureDiagram: {
-      title: 'Micro Failure Whisperer Telemetry & Inference Pipeline',
+      title: 'Underground Mine Safety Rover & IoT Telemetry Architecture',
       nodes: [
-        { id: '1', label: 'Vibration & Thermal Sensors', type: 'sensor' },
-        { id: '2', label: 'ESP32 Hardware Edge Unit', type: 'hardware' },
-        { id: '3', label: 'Python Real-Time Feature Extractor', type: 'ai' },
-        { id: '4', label: 'ML Anomaly Inference Engine', type: 'ai' },
-        { id: '5', label: 'Spring Boot Alert Bus', type: 'backend' },
-        { id: '6', label: 'Industrial Monitoring Dashboard', type: 'ui' },
+        { id: '1', label: '4WD Rover Sensor Suite (MQ-135, DHT22, HC-SR04, Laser/Radar)', type: 'sensor' },
+        { id: '2', label: 'ESP32 Rover Edge Controller & L298N Motor Driver', type: 'hardware' },
+        { id: '3', label: 'TEG & Supercapacitor Energy-Harvesting Node', type: 'hardware' },
+        { id: '4', label: 'LoRa SX1278 Subterranean Gateway', type: 'backend' },
+        { id: '5', label: 'Predictive AI Hazard Correlation Engine', type: 'ai' },
+        { id: '6', label: 'Surface Control Room Live React Dashboard', type: 'ui' },
       ],
       connections: [
-        { from: '1', to: '2', label: 'Raw Analog Telemetry' },
-        { from: '2', to: '3', label: 'MQTT / JSON Streams' },
-        { from: '3', to: '4', label: 'FFT & Wavelet Spectrum' },
-        { from: '4', to: '5', label: 'Anomaly Probability' },
-        { from: '5', to: '6', label: 'Push Notifications & Visuals' },
+        { from: '1', to: '2', label: 'Telemetry & Distance Bus' },
+        { from: '3', to: '2', label: 'Harvested Aux Power' },
+        { from: '2', to: '4', label: 'Sub-GHz LoRa Packets' },
+        { from: '4', to: '5', label: 'Real-time Data Stream' },
+        { from: '5', to: '6', label: 'Live Hazard Map & Siren Alert' },
       ],
     },
     features: [
-      'Real-time Fast Fourier Transform (FFT) vibration spectrum analysis',
-      'Unsupervised Isolation Forest model for detecting unseen micro-fault patterns',
-      'Sub-second inference time on incoming telemetry streams',
-      'Automated email/SMS alert dispatch on high-risk mechanical degradation',
-      'Historical machine health trends and mean-time-between-failures (MTBF) analytics',
+      'Developed an AI-powered mine rescue rover designed for hazardous underground coal mine environments.',
+      'Built and assembled a four-wheel mobile rover chassis.',
+      'Integrated ESP32, L298N motor driver, MQ-135 gas sensor, DHT22 temperature/humidity sensor, and HC-SR04 ultrasonic obstacle sensor.',
+      'Designed and validated the rover power system using a Li-ion battery pack and motor driver configuration for approximately 3–4 hours of continuous exploration runtime.',
+      'Engineered a thermoelectric generator (TEG) based energy-harvesting system combined with hybrid supercapacitor and battery storage.',
+      'Designed the energy-harvesting concept for sensor nodes intended for deployment in legacy mine zones without existing electrical infrastructure.',
+      'Collaborated on the system architecture connecting rover and sensor-node data to a predictive AI correlation engine and live control-room dashboard.',
+      'Developed a working rover hardware prototype for SIH26039.'
     ],
     technicalChallenges: [
-      'Filtering high-frequency industrial noise from true mechanical friction signals',
-      'Optimizing machine learning model weights for low-latency edge inference',
-      'Handling stream serialization during peak sensor sampling rates (1000 Hz)',
+      'Overcoming extreme radio attenuation and multipath signal loss in deep subterranean rock corridors',
+      'Maintaining thermal and electrical safety inside potentially explosive coal dust atmospheres',
+      'Managing tight microcontroller memory and compute resources during high-frequency obstacle scanning'
     ],
     outcomes: [
-      'Achieved 94.2% accuracy in detecting early bearing degradation before audible noise',
-      'Presented at MSME Industrial Innovation Showcase as a low-cost safety solution',
+      'Engineered a working rover hardware prototype for Smart India Hackathon 2026 (SIH26039)',
+      'Validated 3–4 hours continuous exploration runtime with autonomous obstacle detection and toxic gas telemetry',
+      'Engineered thermoelectric generator (TEG) energy harvesting to power sensor nodes in off-grid legacy mine zones'
     ],
-    sdgImpact: 'SDG 9: Industry, Innovation, and Infrastructure & SDG 12: Responsible Consumption and Production',
-  },
-  {
-    id: 'digital-smell',
-    title: 'Digital Smell - Gas Leakage & AI Hazard Alert',
-    tagline: 'High-Sensitivity Embedded AI Gas Leakage & Industrial Environmental Safety Unit',
-    category: 'IoT & Embedded AI',
-    status: 'Ongoing',
-    featured: true,
-    heroImage: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1200&auto=format&fit=crop',
-    githubUrl: 'https://github.com/Hikki-11/digital-smell',
-    tags: ['IoT', 'Embedded AI', 'Gas Sensors', 'Hazard Detection', 'ESP32', 'Edge AI'],
-    problemStatement: 'Chemical plants and gas pipelines often leak trace amounts of hazardous gases (LPG, Methane, Carbon Monoxide) long before concentration exceeds traditional binary alarm trip points, posing invisible health and explosion hazards.',
-    solutionApproach: 'Designed an intelligent gas detection unit coupling high-sensitivity MQ series sensors with an embedded micro-AI model that identifies minute gas concentration slopes, enabling sub-second hazard alerts before toxic accumulation.',
-    architectureDiagram: {
-      title: 'Digital Smell Embedded Hazard Detection System',
-      nodes: [
-        { id: '1', label: 'MQ Gas Sensor Array', type: 'sensor' },
-        { id: '2', label: 'Embedded AI Slope Analyzer', type: 'ai' },
-        { id: '3', label: 'ESP32 Safety Microcontroller', type: 'hardware' },
-        { id: '4', label: 'Emergency Solenoid & Siren Bus', type: 'backend' },
-        { id: '5', label: 'Cloud Safety Monitoring API', type: 'database' },
-      ],
-      connections: [
-        { from: '1', to: '2', label: 'PPM Voltage Drift' },
-        { from: '2', to: '3', label: 'Slope Anomaly Trigger' },
-        { from: '3', to: '4', label: 'Relay Actuation Signal' },
-        { from: '3', to: '5', label: 'Encrypted Telemetry Payload' },
-      ],
-    },
-    features: [
-      'Continuous differential slope calculation (dPPM/dt) for rapid leak detection',
-      'Multi-gas classification distinguishing between harmless ambient shifts and combustible leaks',
-      'Local audio-visual siren trip with simultaneous remote REST API payload dispatch',
-      'Failsafe emergency shut-off valve relay actuation',
-    ],
-    technicalChallenges: [
-      'Compensating sensor baseline drift due to ambient humidity and temperature changes',
-      'Running slope predictive math on microcontrollers with constrained RAM',
-    ],
-    outcomes: [
-      'Dramatically reduced alarm response threshold time from 45 seconds down to under 2.5 seconds',
-      'Selected for MSME Industrial Safety Showcase presentation',
-    ],
-    sdgImpact: 'SDG 3: Good Health and Well-being & SDG 9: Industry, Innovation, and Infrastructure',
+    sdgImpact: 'SDG 3: Good Health and Well-being & SDG 8: Decent Work and Economic Growth & SDG 9: Industry, Innovation, and Infrastructure'
   },
   {
     id: 'scriptguard-ai',
@@ -300,6 +452,74 @@ export const PROJECTS_DATA: ProjectCaseStudy[] = [
       'Processed over 500 test examination papers with high OCR confidence scores',
     ],
   },
+  {
+    id: 'build-club-projects',
+    title: 'Build Club Projects – Hands-on Engineering & Innovation',
+    cardTitle: 'Build Club Projects –\nHands-on Engineering & Innovation',
+    tagline: 'Hands-on Engineering & Innovation • Hardware Prototypes',
+    category: 'Build Club Projects',
+    categoryBadge: 'Hands-on Engineering',
+    status: 'Completed',
+    featured: true,
+    heroImage: buildClubShowcaseImg,
+    subProjects: BUILD_CLUB_PROJECTS_DATA,
+    tags: [
+      'ESP32-C6',
+      'Mecanum Wheels',
+      'Buck Converter',
+      'Four-Bar Linkage',
+      'L298N',
+      'LM2575',
+      'RGB LEDs',
+      'Circuit Design',
+      'Robotics',
+    ],
+    problemStatement: 'A collective hands-on engineering initiative exploring embedded systems, mobile robotics with Mecanum drive, DC-DC power electronics, and mechanical kinematic linkages through practical design, assembly, testing, and prototyping.',
+    solutionApproach: 'Designed, assembled, and validated four distinct engineering prototypes: Sound Rush (acoustic LED visualizer), MecaRush (omnidirectional 4WD mobile robot with web control), VoltDrop (24V-to-12V switching buck converter), and WipeMotion (four-bar wiper linkage mechanism).',
+    architectureDiagram: {
+      title: 'Build Club Multi-Disciplinary Engineering Domain Architecture',
+      nodes: [
+        { id: '1', label: 'Sound Rush: ESP32-C6 Acoustic & RGB Visualizer', type: 'hardware' },
+        { id: '2', label: 'MecaRush: 4WD Mecanum Robot & Web Control', type: 'hardware' },
+        { id: '3', label: 'VoltDrop: 24V-to-12V LM2575 Buck Converter', type: 'hardware' },
+        { id: '4', label: 'WipeMotion: Four-Bar Wiper Kinematic Model', type: 'hardware' },
+        { id: '5', label: 'Build Club Hands-on Engineering Portfolio', type: 'ui' },
+      ],
+      connections: [
+        { from: '1', to: '5', label: 'Embedded Systems' },
+        { from: '2', to: '5', label: 'Robotics & Vector Drive' },
+        { from: '3', to: '5', label: 'Power Electronics' },
+        { from: '4', to: '5', label: 'Kinematic Linkages' },
+      ],
+    },
+    features: [
+      'Sound Rush: ESP32-C6 microphone sound-level detection driving 16-LED circular visualizer with color-coded feedback.',
+      'MecaRush: Four-wheel Mecanum robot with dual L298N motor drivers and mobile web joystick control for omnidirectional motion.',
+      'VoltDrop: Switching DC-DC buck converter stepping 24V down to 12V using LM2575-ADJ, powering a 12V DC motor.',
+      'WipeMotion: Precision four-bar mechanical linkage converting rotational input into oscillating automotive wiper motion.',
+    ],
+    technicalChallenges: [
+      'Managing diverse engineering disciplines across microcontrollers, power regulators, and mechanical linkages',
+      'Rigorous bench testing and debugging of physical hardware prototypes under active load conditions',
+    ],
+    outcomes: [
+      'Successfully built and demonstrated functional working prototypes for the Build Club showcase',
+      'Validated end-to-end hands-on competencies in embedded systems, power electronics, robotics, and kinematics',
+    ],
+  },
+];
+
+export const BUILD_CLUB_SKILLS = [
+  'Embedded Systems',
+  'ESP32',
+  'Robotics',
+  'Motor Control',
+  'Power Electronics',
+  'Circuit Design',
+  'Mechanical Assembly',
+  'Prototyping',
+  'Testing',
+  'Troubleshooting',
 ];
 
 export const SKILL_CATEGORIES: SkillCategory[] = [

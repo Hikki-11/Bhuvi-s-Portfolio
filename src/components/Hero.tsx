@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FileText, Mail, Github, Linkedin, ArrowRight, Server } from 'lucide-react';
 import { PROFILE_DATA } from '../data/portfolioData';
-import heroVectorImg from '../assets/images/centered_engineer_card_1785134211741.jpg';
+import heroVectorImg from '../assets/images/image.png';
 
 interface HeroProps {
   onOpenResume: () => void;
@@ -133,19 +133,18 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResume }) => {
 
         {/* Right Column: Profile Avatar / Card */}
         <div className="relative shrink-0 w-72 sm:w-80">
-          <div className="relative rounded-[18px] p-2 bg-gradient-to-b from-black/5 to-black/2 border border-[rgba(33,37,41,0.08)] shadow-xl backdrop-blur-xl group hover:border-[rgba(33,37,41,0.2)] transition-all duration-300">
+          <div className="relative rounded-[18px] p-2 bg-white/80 border border-[rgba(33,37,41,0.08)] shadow-xl backdrop-blur-xl group hover:border-[rgba(33,37,41,0.2)] transition-all duration-300">
             {/* Soft Warm Glow Behind Avatar */}
             <div className="absolute -inset-1 rounded-[22px] bg-[#DEE2E6]/50 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
             {/* Profile Avatar Container */}
-            <div className="relative rounded-[16px] overflow-hidden bg-white/60 aspect-square flex items-center justify-center border border-[rgba(33,37,41,0.08)] p-1.5 shadow-inner">
+            <div className="relative rounded-[16px] overflow-hidden bg-white aspect-square flex items-center justify-center border border-[rgba(33,37,41,0.08)] p-1.5 shadow-inner">
               <img
                 src={heroVectorImg}
                 alt="Software engineer working at laptop centered in card"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover object-center rounded-[12px] transition-all duration-500 hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-30 pointer-events-none rounded-[16px]" />
               
               <div className="absolute bottom-3 left-3 right-3 p-2.5 rounded-[12px] bg-[rgba(255,255,255,0.92)] backdrop-blur-md border border-[rgba(33,37,41,0.1)] flex items-center space-x-3 text-left shadow-sm">
                 <div className="p-2 rounded-[8px] bg-[#DEE2E6] border border-[rgba(33,37,41,0.08)] text-[#212529] shrink-0">
