@@ -17,9 +17,11 @@ interface ArchitectureDiagramProps {
   title: string;
   nodes: ArchitectureNode[];
   connections: ArchitectureConnection[];
+  subtitle?: string;
+  statusNote?: string;
 }
 
-export const ArchitectureDiagram: React.FC<ArchitectureDiagramProps> = ({ title, nodes, connections }) => {
+export const ArchitectureDiagram: React.FC<ArchitectureDiagramProps> = ({ title, nodes, connections, subtitle, statusNote }) => {
   const getNodeIcon = (type: ArchitectureNode['type']) => {
     switch (type) {
       case 'sensor': return <Radio className="w-5 h-5 text-[#212529]" />;
@@ -81,8 +83,8 @@ export const ArchitectureDiagram: React.FC<ArchitectureDiagramProps> = ({ title,
       </div>
 
       <div className="text-[11px] font-mono text-[#495057] border-t border-[rgba(33,37,41,0.08)] pt-2 flex items-center justify-between">
-        <span>Sub-second End-to-End Latency Pipeline</span>
-        <span className="text-[#212529] font-semibold">● Real-time Sensor Stream Validated</span>
+        <span>{subtitle || 'Sub-second End-to-End Latency Pipeline'}</span>
+        <span className="text-[#212529] font-semibold">{statusNote || '● Real-time Sensor Stream Validated'}</span>
       </div>
     </div>
   );

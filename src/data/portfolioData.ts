@@ -1,10 +1,5 @@
 import { WorkExperience, ProjectCaseStudy, SkillCategory, TimelineItem, CertificationItem, DSAStats } from '../types';
-import mineRescueRoverImg from '../assets/images/mine_rescue_rover_1790257437713.jpg';
-import soundRushImg from '../assets/images/project1_sound_rush.jpg';
-import mecaRushImg from '../assets/images/project2_mecarush.jpg';
-import voltDropImg from '../assets/images/project3_voltdrop.jpg';
-import wipeMotionImg from '../assets/images/project4_wipemotion.jpg';
-import buildClubShowcaseImg from '../assets/images/build_club_projects_collage_1791592355801.jpg';
+import invPredictImg from '../assets/images/invpredict_erp_dashboard_1793407477013.jpg';
 
 export const WORK_EXPERIENCE_DATA: WorkExperience[] = [
   {
@@ -40,177 +35,6 @@ export const PROFILE_DATA = {
   leetcode: 'https://leetcode.com/u/BHUVANESASN_N/',
   leetcodeCount: 170,
 };
-
-export const BUILD_CLUB_PROJECTS_DATA: ProjectCaseStudy[] = [
-  {
-    id: 'sound-rush',
-    title: 'Sound Rush – Run the Circle!',
-    cardTitle: 'Sound Rush – Run the Circle!',
-    tagline: 'ESP32-C6 Sound-Level Detection & RGB Visualization',
-    category: 'Build Club Projects',
-    categoryBadge: 'Embedded Systems & Electronics',
-    status: 'Completed',
-    featured: true,
-    heroImage: soundRushImg,
-    tags: ['ESP32-C6', 'Microphone Module', 'RGB LEDs', 'Embedded Systems'],
-    problemStatement: 'Developed an interactive sound-level detection system using an ESP32-C6 and microphone module, connected to a 16-LED RGB visualizer. Implemented circular LED animations with color-coded visual feedback representing sound intensity levels from low to very high.',
-    solutionApproach: 'Sampled acoustic signal peaks using the microphone sensor module connected to the ESP32-C6 analog-to-digital converter. Engineered an animated circular state machine that dynamically drives 16 individually addressable RGB LEDs with responsive color gradients.',
-    architectureDiagram: {
-      title: 'Sound Rush ESP32-C6 Acoustic Telemetry & Circular LED Topology',
-      nodes: [
-        { id: '1', label: 'Microphone Module (Analog Acoustic Sense)', type: 'sensor' },
-        { id: '2', label: 'ESP32-C6 ADC & Threshold Discriminator', type: 'hardware' },
-        { id: '3', label: 'Dynamic Level Mapping State Engine', type: 'backend' },
-        { id: '4', label: '16-LED RGB Circular Visualizer', type: 'ui' },
-      ],
-      connections: [
-        { from: '1', to: '2', label: 'Analog Audio Voltage' },
-        { from: '2', to: '3', label: 'Discrete Sound Levels' },
-        { from: '3', to: '4', label: 'High-Speed RGB Pixel Bus' },
-      ],
-    },
-    features: [
-      'Sound-level detection using a microphone module.',
-      '16-LED RGB visualizer.',
-      'Circular LED animation.',
-      'Color-coded indication of sound intensity.',
-    ],
-    technicalChallenges: [
-      'Calibrating ambient baseline room noise vs. transient acoustic peaks',
-      'Maintaining zero-latency LED frame updates without blocking analog sampling',
-    ],
-    outcomes: [
-      'Successfully verified real-time circular sound intensity visualization',
-      'Completed functional prototype demonstration for Build Club Showcase',
-    ],
-  },
-  {
-    id: 'mecarush',
-    title: 'MecaRush – Move Beyond Limits!',
-    cardTitle: 'MecaRush – Move Beyond Limits!',
-    tagline: 'Four-Wheel Mecanum Robot with Wireless Web Control',
-    category: 'Build Club Projects',
-    categoryBadge: 'Robotics & Embedded Systems',
-    status: 'Completed',
-    featured: true,
-    heroImage: mecaRushImg,
-    tags: ['ESP32-C6', 'Mecanum Wheels', 'L298N', 'DC Motors', 'Web Control'],
-    problemStatement: 'Built a four-wheel Mecanum robot powered by an ESP32-C6, two L298N motor drivers, and four DC motors. Implemented wireless control through a custom joystick-style web interface, enabling forward, backward, lateral, diagonal, and rotational movement.',
-    solutionApproach: 'Designed a four-wheel omnidirectional chassis with 45-degree angled roller Mecanum wheels. Created an asynchronous web server on the ESP32-C6 that maps 2D vector joystick inputs into independent PWM duty cycles across dual dual-H-bridge L298N motor drivers.',
-    architectureDiagram: {
-      title: 'MecaRush Kinematic Vector Control & Motor Driver Architecture',
-      nodes: [
-        { id: '1', label: 'Wireless Joystick Web Interface', type: 'ui' },
-        { id: '2', label: 'ESP32-C6 Wi-Fi Access Point & Server', type: 'backend' },
-        { id: '3', label: 'Dual L298N Dual H-Bridge Drivers', type: 'hardware' },
-        { id: '4', label: '4x DC Motors with Mecanum Wheels', type: 'hardware' },
-      ],
-      connections: [
-        { from: '1', to: '2', label: 'Touch Joystick Packets' },
-        { from: '2', to: '3', label: 'PWM Kinematic Direction Signals' },
-        { from: '3', to: '4', label: 'High-Current Motor Drive' },
-      ],
-    },
-    features: [
-      'Four-wheel Mecanum robot assembly.',
-      'Dual L298N motor-driver integration.',
-      'Wireless joystick-style web interface.',
-      'Forward, backward, lateral, diagonal, and rotational movement.',
-    ],
-    technicalChallenges: [
-      'Configuring proper motor phase polarity for omnidirectional translation vectors',
-      'Handling sudden peak current spikes across dual motor drivers under rapid direction changes',
-    ],
-    outcomes: [
-      'Achieved responsive omnidirectional movement (lateral strafe, diagonal crawl, pivot turns)',
-      'Delivered seamless wireless control via mobile browser without external apps',
-    ],
-  },
-  {
-    id: 'voltdrop',
-    title: 'VoltDrop – DC-DC Buck Converter',
-    cardTitle: 'VoltDrop – DC-DC Buck Converter',
-    tagline: '24V DC to Approximately 12V DC Conversion',
-    category: 'Build Club Projects',
-    categoryBadge: 'Power Electronics',
-    status: 'Completed',
-    featured: true,
-    heroImage: voltDropImg,
-    tags: ['LM2575-ADJ', 'DC-DC Converter', 'Power Electronics', 'Circuit Design'],
-    problemStatement: 'Designed and tested a switching buck converter using the LM2575-ADJ regulator to step down a 24V DC input to approximately 12V DC. Verified the output voltage using a digital multimeter and successfully powered a 12V DC motor.',
-    solutionApproach: 'Engineered a high-efficiency step-down regulator circuit based on the LM2575-ADJ switching IC. Calculated feedback resistors, selected a fast-recovery Schottky diode and toroidal power inductor, and filtered output ripple with low-ESR capacitors.',
-    architectureDiagram: {
-      title: 'VoltDrop LM2575-ADJ Step-Down Buck Converter Power Stage',
-      nodes: [
-        { id: '1', label: '24V DC Bench Power Supply Input', type: 'hardware' },
-        { id: '2', label: 'LM2575-ADJ Switching Regulator & Inductor', type: 'hardware' },
-        { id: '3', label: 'Schottky Diode & LC Low-Pass Filter', type: 'hardware' },
-        { id: '4', label: 'Digital Multimeter & 12V DC Motor Load', type: 'ui' },
-      ],
-      connections: [
-        { from: '1', to: '2', label: '24V DC Raw Rail' },
-        { from: '2', to: '3', label: 'High-Frequency Switched Energy' },
-        { from: '3', to: '4', label: 'Stabilized ~12V DC Motor Power' },
-      ],
-    },
-    features: [
-      'Switching buck-converter design.',
-      '24V DC input and approximately 12V DC output.',
-      'Output verification using a digital multimeter.',
-      'Demonstration using a 12V DC motor.',
-    ],
-    technicalChallenges: [
-      'Selecting optimal inductor inductance and current rating to prevent magnetic core saturation',
-      'Minimizing voltage drop and switching ripple during initial motor inrush current',
-    ],
-    outcomes: [
-      'Accurately achieved ~12V DC regulated output verified with digital multimeter',
-      'Successfully sustained smooth motor spin under load without overheating',
-    ],
-  },
-  {
-    id: 'wipemotion',
-    title: 'WipeMotion – Four-Bar Linkage Mechanism',
-    cardTitle: 'WipeMotion – Four-Bar Linkage Mechanism',
-    tagline: 'Windshield Wiper Mechanism Demonstration',
-    category: 'Build Club Projects',
-    categoryBadge: 'Mechanical Engineering',
-    status: 'Completed',
-    featured: true,
-    heroImage: wipeMotionImg,
-    tags: ['Mechanical Design', 'Four-Bar Linkage', 'Motion Transmission', 'Prototyping'],
-    problemStatement: 'Assembled a four-bar linkage mechanism demonstrating the working principle of an automotive windshield wiper. Explored mechanical linkages, pivot joints, motion transmission, and the conversion of rotational input into oscillating output motion.',
-    solutionApproach: 'Fabricated and aligned a planar four-bar crank-rocker mechanism. Transmitted continuous rotational power from an input crank arm through a connecting coupler bar to drive an oscillating rocker arm representing a windshield wiper blade assembly.',
-    architectureDiagram: {
-      title: 'WipeMotion Four-Bar Linkage Kinematic Transmission Model',
-      nodes: [
-        { id: '1', label: 'Rotary Crank Driver Link (Input)', type: 'hardware' },
-        { id: '2', label: 'Connecting Coupler Rod', type: 'hardware' },
-        { id: '3', label: 'Oscillating Rocker Pivot Link', type: 'hardware' },
-        { id: '4', label: 'Wiper Blade & Sweeping Arc Output', type: 'ui' },
-      ],
-      connections: [
-        { from: '1', to: '2', label: 'Continuous 360° Rotary Input' },
-        { from: '2', to: '3', label: 'Dynamic Planar Force Transfer' },
-        { from: '3', to: '4', label: 'Reciprocating Wiper Sweep Motion' },
-      ],
-    },
-    features: [
-      'Four-bar linkage assembly.',
-      'Study of pivot joints and mechanical connections.',
-      'Demonstration of rotational-to-oscillating motion.',
-      'Exploration of the working principle of a windshield wiper.',
-    ],
-    technicalChallenges: [
-      'Eliminating mechanical binding and dead centers through precise link length ratio calculation',
-      'Maintaining low friction and minimal play in custom pivot joint bushings',
-    ],
-    outcomes: [
-      'Demonstrated reliable continuous conversion from rotation to oscillating wiping motion',
-      'Clear hands-on demonstration of classical mechanical engineering kinematics',
-    ],
-  },
-];
 
 export const PROJECTS_DATA: ProjectCaseStudy[] = [
   {
@@ -343,71 +167,173 @@ export const PROJECTS_DATA: ProjectCaseStudy[] = [
     ],
   },
   {
-    id: 'ai-mine-safety-rescue',
-    title: 'AI-Powered Underground Mine Safety, Monitoring & Rescue System',
-    cardTitle: 'AI-Powered Underground Mine Safety,\nMonitoring & Rescue System',
-    tagline: 'SIH 2026 – SIH26039',
-    category: 'AI, IoT & Robotics',
-    categoryBadge: 'AI • IoT • Robotics',
-    status: 'SIH 2026',
+    id: 'invpredict',
+    title: 'InvPredict – Inventory Management System',
+    company: 'QIXARC',
+    tagline: 'QIXARC | Enterprise Inventory & Business Management Platform',
+    category: 'Full Stack',
+    status: 'In Progress',
     featured: true,
-    heroImage: mineRescueRoverImg,
-    githubUrl: 'https://github.com/Hikki-11/ai-mine-safety-rescue',
+    heroImage: invPredictImg,
+    githubUrl: 'https://github.com/Hikki-11/InvPredict',
     tags: [
-      'ESP32',
-      'L298N',
-      'MQ-135',
-      'DHT22',
-      'HC-SR04',
-      'LoRa SX1278',
-      'TEG',
-      'Li-ion Battery',
-      'Supercapacitor',
-      'Laser & Radar Sensing',
-      'React.js',
-      'AI/ML'
+      'React 18',
+      'Vite',
+      'JavaScript',
+      'Google AI Studio',
+      'Inventory Management',
+      'GST Management',
+      'Role-Based Access Control',
+      'Business Analytics',
     ],
-    problemStatement: 'An AI-powered underground mine safety, monitoring, and rescue system developed for Smart India Hackathon 2026 (SIH26039), designed to explore hazardous underground coal mine environments, detect toxic gases and environmental hazards, identify obstacles and potential structural anomalies, and relay live sensor data to a surface control station.',
-    solutionApproach: 'Designed and engineered an AI-powered 4-wheel mobile rescue rover chassis integrated with long-range LoRa SX1278 telemetry and TEG energy-harvesting sensor nodes. The system connects multi-gas, climatic, and obstacle sensors to a predictive AI correlation engine and surface control dashboard for proactive disaster mitigation.',
+    problemStatement: 'A comprehensive inventory management solution covering stock tracking, batch monitoring, procurement, warehouse transfers, production, sales, GST invoicing, and financial reporting.',
+    solutionApproach: 'Developed InvPredict, a comprehensive inventory management web application for QIXARC, covering the complete inventory lifecycle from stock management and batch tracking to procurement, production, sales, GST invoicing, and business reporting. Features role-based access, warehouse management, stock intelligence, and financial tracking through an integrated dashboard.',
+    overview: 'InvPredict is a React 18 + Vite-based inventory management application developed for QIXARC using Google AI Studio. It manages the complete business workflow, from inventory and purchasing to production, sales, GST invoicing, and financial reporting.',
     architectureDiagram: {
-      title: 'Underground Mine Safety Rover & IoT Telemetry Architecture',
+      title: 'InvPredict End-to-End Inventory & Financial Workflow',
+      subtitle: 'Enterprise Business Workflow Execution Pipeline',
+      statusNote: '● Role-Gated Modular Architecture',
       nodes: [
-        { id: '1', label: '4WD Rover Sensor Suite (MQ-135, DHT22, HC-SR04, Laser/Radar)', type: 'sensor' },
-        { id: '2', label: 'ESP32 Rover Edge Controller & L298N Motor Driver', type: 'hardware' },
-        { id: '3', label: 'TEG & Supercapacitor Energy-Harvesting Node', type: 'hardware' },
-        { id: '4', label: 'LoRa SX1278 Subterranean Gateway', type: 'backend' },
-        { id: '5', label: 'Predictive AI Hazard Correlation Engine', type: 'ai' },
-        { id: '6', label: 'Surface Control Room Live React Dashboard', type: 'ui' },
+        { id: '1', label: 'Inventory Management', type: 'ui' },
+        { id: '2', label: 'Item Master & Batch Tracking', type: 'database' },
+        { id: '3', label: 'Warehouse & Procurement', type: 'backend' },
+        { id: '4', label: 'Production & Stock Updates', type: 'backend' },
+        { id: '5', label: 'Sales & GST Invoicing', type: 'backend' },
+        { id: '6', label: 'Payments & Financial Reports', type: 'ui' },
       ],
       connections: [
-        { from: '1', to: '2', label: 'Telemetry & Distance Bus' },
-        { from: '3', to: '2', label: 'Harvested Aux Power' },
-        { from: '2', to: '4', label: 'Sub-GHz LoRa Packets' },
-        { from: '4', to: '5', label: 'Real-time Data Stream' },
-        { from: '5', to: '6', label: 'Live Hazard Map & Siren Alert' },
+        { from: '1', to: '2', label: 'Item Master & Batches' },
+        { from: '2', to: '3', label: 'PO Receipts & Transfers' },
+        { from: '3', to: '4', label: 'Material Allocation' },
+        { from: '4', to: '5', label: 'Finished Goods Dispatch' },
+        { from: '5', to: '6', label: 'GST Invoices & Ledgers' },
+      ],
+    },
+    userRoles: [
+      {
+        role: 'Admin',
+        badge: 'Full Access',
+        permissions: 'Complete system access, user role provisioning, configuration settings, activity audit logging, and financial report oversight.',
+      },
+      {
+        role: 'Inventory Manager',
+        badge: 'Operational Control',
+        permissions: 'Item master management, stock adjustments with mandatory reasons, batch expiry & quarantine control, warehouse transfers, and production orders.',
+      },
+      {
+        role: 'Billing Clerk',
+        badge: 'Sales & Billing',
+        permissions: 'Customer profiles, sales order creation (Pending → Shipped → Delivered), GST invoice generation (CGST/SGST/IGST), payment logging, and dispatch notes.',
+      },
+    ],
+    coreModules: [
+      {
+        letter: 'A',
+        module: 'Role-Based Access Management',
+        points: [
+          'Three distinct roles: Admin, Inventory Manager, and Billing Clerk',
+          'Strict permission-based access control and module gating',
+          'Tamper-evident activity audit logging for critical stock & financial actions',
+          'Seamless bilingual English and Tamil language switching',
+        ],
+      },
+      {
+        letter: 'B',
+        module: 'Inventory & Stock Management',
+        points: [
+          'Centralized item master with HSN codes, GST tax rates, and unit codes',
+          'Automated reorder point calculations and stock-days depletion warnings',
+          'Inventory aging buckets for proactive slow-moving stock identification',
+          'Audited stock adjustments with mandatory reason attribution',
+          'Strict overselling prevention logic during order entry',
+        ],
+      },
+      {
+        letter: 'C',
+        module: 'Batch & Expiry Management',
+        points: [
+          'Expired, Critical, Near Expiry, and Healthy classification tiers',
+          'Critical expiry threshold alerting for batches with 7 days or fewer',
+          'Automated quarantined batch filtering preventing accidental dispatch',
+          'Batch recall simulation with clear simulation labeling',
+        ],
+      },
+      {
+        letter: 'D',
+        module: 'Warehouse Management',
+        points: [
+          'Warehouse-to-warehouse multi-facility stock transfers',
+          'Strict transfer state lifecycle: Pending → In Transit → Received',
+          'Rigorous stock conservation accounting during transit states',
+          'Simulated branch synchronization engine with state reconciliation',
+        ],
+      },
+      {
+        letter: 'E',
+        module: 'Procurement & Production',
+        points: [
+          'Comprehensive vendor and supplier management directory',
+          'Purchase order lifecycle management with status tracking',
+          'Partial purchase-order receipts directly into tracked inventory batches',
+          'Single-item production run tracking and material consumption',
+          'Planned versus actual production cost tracking and variance analysis',
+        ],
+      },
+      {
+        letter: 'F',
+        module: 'Sales & Financial Management',
+        points: [
+          'Customer account profiles, credit terms, and transaction histories',
+          'Sales order fulfillment lifecycle: Pending → Shipped → Delivered',
+          'Compliant GST invoices with dual CGST + SGST and inter-state IGST calculations',
+          'Payment tracking, receivables aging, and partial payment reconciliation',
+          'FIFO (First-In, First-Out) inventory valuation methodology',
+          'GST summary reports and Tally accounting format exports (clearly marked as not certified for statutory tax filing)',
+        ],
+      },
+    ],
+    advancedIntegrations: [
+      {
+        title: 'E-Way Bill Integration',
+        badge: 'Mock Mode',
+        points: [
+          'E-way bill functionality currently operates in mock mode for simulated logistics workflows.',
+          'Triggered automatically through shipped sales orders and warehouse transfers.',
+          'Transfer dispatch parameters capture transporter details, vehicle number, and distance (km).',
+          'Explicit notice: Mock simulation; not connected to live government NIC e-Way bill portal.',
+        ],
+      },
+    ],
+    technicalLimitations: {
+      title: 'Current Technical Limitations (Active Development)',
+      points: [
+        'Data persistence is currently in-memory; persistent database storage is not yet implemented.',
+        'Live GST credential integration requires server-side hosting.',
+        'GSP account integration is pending.',
+        'E-invoice IRN integration is pending.',
+        'GSTR-2B reconciliation integration is pending.',
+        'External API integration and real branch synchronization are pending.',
+        'Multi-level Bill of Materials (BOM) is not implemented.',
       ],
     },
     features: [
-      'Developed an AI-powered mine rescue rover designed for hazardous underground coal mine environments.',
-      'Built and assembled a four-wheel mobile rover chassis.',
-      'Integrated ESP32, L298N motor driver, MQ-135 gas sensor, DHT22 temperature/humidity sensor, and HC-SR04 ultrasonic obstacle sensor.',
-      'Designed and validated the rover power system using a Li-ion battery pack and motor driver configuration for approximately 3–4 hours of continuous exploration runtime.',
-      'Engineered a thermoelectric generator (TEG) based energy-harvesting system combined with hybrid supercapacitor and battery storage.',
-      'Designed the energy-harvesting concept for sensor nodes intended for deployment in legacy mine zones without existing electrical infrastructure.',
-      'Collaborated on the system architecture connecting rover and sensor-node data to a predictive AI correlation engine and live control-room dashboard.',
-      'Developed a working rover hardware prototype for SIH26039.'
+      'Centralized item master with HSN codes, GST tax rates, and unit codes',
+      'Batch-level tracking with 7-day critical expiry thresholds and quarantine filtering',
+      'Warehouse-to-warehouse stock transfers (Pending → In Transit → Received)',
+      'Automated purchase order receipts and single-item production cost tracking',
+      'Sales orders with FIFO inventory valuation, CGST/SGST/IGST billing, and Tally export',
+      'Role-Based Access Control (Admin, Inventory Manager, Billing Clerk) with Tamil toggle',
     ],
     technicalChallenges: [
-      'Overcoming extreme radio attenuation and multipath signal loss in deep subterranean rock corridors',
-      'Maintaining thermal and electrical safety inside potentially explosive coal dust atmospheres',
-      'Managing tight microcontroller memory and compute resources during high-frequency obstacle scanning'
+      'Maintaining mathematical stock conservation invariants during asynchronous multi-warehouse transfers',
+      'Dual-taxation arithmetic for intra-state (CGST + SGST) vs inter-state (IGST) invoices under FIFO depletion',
+      'Structuring comprehensive in-memory relational models with audit histories in a React 18 SPA environment',
     ],
     outcomes: [
-      'Engineered a working rover hardware prototype for Smart India Hackathon 2026 (SIH26039)',
-      'Validated 3–4 hours continuous exploration runtime with autonomous obstacle detection and toxic gas telemetry',
-      'Engineered thermoelectric generator (TEG) energy harvesting to power sensor nodes in off-grid legacy mine zones'
+      'Delivered full-featured enterprise inventory ERP for QIXARC covering all operational stages',
+      'Eliminated inventory stockout blindspots through proactive 7-day expiry and reorder alerts',
+      'Validated end-to-end business workflows from vendor PO receipt to customer GST billing and dispatch',
     ],
-    sdgImpact: 'SDG 3: Good Health and Well-being & SDG 8: Decent Work and Economic Growth & SDG 9: Industry, Innovation, and Infrastructure'
   },
   {
     id: 'scriptguard-ai',
@@ -452,74 +378,6 @@ export const PROJECTS_DATA: ProjectCaseStudy[] = [
       'Processed over 500 test examination papers with high OCR confidence scores',
     ],
   },
-  {
-    id: 'build-club-projects',
-    title: 'Build Club Projects – Hands-on Engineering & Innovation',
-    cardTitle: 'Build Club Projects –\nHands-on Engineering & Innovation',
-    tagline: 'Hands-on Engineering & Innovation • Hardware Prototypes',
-    category: 'Build Club Projects',
-    categoryBadge: 'Hands-on Engineering',
-    status: 'Completed',
-    featured: true,
-    heroImage: buildClubShowcaseImg,
-    subProjects: BUILD_CLUB_PROJECTS_DATA,
-    tags: [
-      'ESP32-C6',
-      'Mecanum Wheels',
-      'Buck Converter',
-      'Four-Bar Linkage',
-      'L298N',
-      'LM2575',
-      'RGB LEDs',
-      'Circuit Design',
-      'Robotics',
-    ],
-    problemStatement: 'A collective hands-on engineering initiative exploring embedded systems, mobile robotics with Mecanum drive, DC-DC power electronics, and mechanical kinematic linkages through practical design, assembly, testing, and prototyping.',
-    solutionApproach: 'Designed, assembled, and validated four distinct engineering prototypes: Sound Rush (acoustic LED visualizer), MecaRush (omnidirectional 4WD mobile robot with web control), VoltDrop (24V-to-12V switching buck converter), and WipeMotion (four-bar wiper linkage mechanism).',
-    architectureDiagram: {
-      title: 'Build Club Multi-Disciplinary Engineering Domain Architecture',
-      nodes: [
-        { id: '1', label: 'Sound Rush: ESP32-C6 Acoustic & RGB Visualizer', type: 'hardware' },
-        { id: '2', label: 'MecaRush: 4WD Mecanum Robot & Web Control', type: 'hardware' },
-        { id: '3', label: 'VoltDrop: 24V-to-12V LM2575 Buck Converter', type: 'hardware' },
-        { id: '4', label: 'WipeMotion: Four-Bar Wiper Kinematic Model', type: 'hardware' },
-        { id: '5', label: 'Build Club Hands-on Engineering Portfolio', type: 'ui' },
-      ],
-      connections: [
-        { from: '1', to: '5', label: 'Embedded Systems' },
-        { from: '2', to: '5', label: 'Robotics & Vector Drive' },
-        { from: '3', to: '5', label: 'Power Electronics' },
-        { from: '4', to: '5', label: 'Kinematic Linkages' },
-      ],
-    },
-    features: [
-      'Sound Rush: ESP32-C6 microphone sound-level detection driving 16-LED circular visualizer with color-coded feedback.',
-      'MecaRush: Four-wheel Mecanum robot with dual L298N motor drivers and mobile web joystick control for omnidirectional motion.',
-      'VoltDrop: Switching DC-DC buck converter stepping 24V down to 12V using LM2575-ADJ, powering a 12V DC motor.',
-      'WipeMotion: Precision four-bar mechanical linkage converting rotational input into oscillating automotive wiper motion.',
-    ],
-    technicalChallenges: [
-      'Managing diverse engineering disciplines across microcontrollers, power regulators, and mechanical linkages',
-      'Rigorous bench testing and debugging of physical hardware prototypes under active load conditions',
-    ],
-    outcomes: [
-      'Successfully built and demonstrated functional working prototypes for the Build Club showcase',
-      'Validated end-to-end hands-on competencies in embedded systems, power electronics, robotics, and kinematics',
-    ],
-  },
-];
-
-export const BUILD_CLUB_SKILLS = [
-  'Embedded Systems',
-  'ESP32',
-  'Robotics',
-  'Motor Control',
-  'Power Electronics',
-  'Circuit Design',
-  'Mechanical Assembly',
-  'Prototyping',
-  'Testing',
-  'Troubleshooting',
 ];
 
 export const SKILL_CATEGORIES: SkillCategory[] = [

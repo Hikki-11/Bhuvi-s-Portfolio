@@ -13,15 +13,14 @@ export interface WorkExperience {
 export interface ProjectCaseStudy {
   id: string;
   title: string;
-  cardTitle?: string;
   tagline: string;
-  category: 'Backend & Cloud' | 'IoT & Embedded AI' | 'Machine Learning' | 'Web & Fullstack' | 'AI, IoT & Robotics' | string;
-  categoryBadge?: string;
-  status: 'Completed' | 'Ongoing' | 'Award Winner' | 'SIH 2026' | string;
+  category: 'Backend & Cloud' | 'IoT & Embedded AI' | 'Machine Learning' | 'Web & Fullstack' | 'Full Stack' | 'Full Stack Development';
+  status: 'Completed' | 'Ongoing' | 'Award Winner' | 'In Progress';
   featured: boolean;
   heroImage: string;
-  githubUrl?: string;
+  githubUrl: string;
   liveDemoUrl?: string;
+  company?: string;
   tags: string[];
   problemStatement: string;
   solutionApproach: string;
@@ -29,12 +28,33 @@ export interface ProjectCaseStudy {
     title: string;
     nodes: { id: string; label: string; type: 'sensor' | 'hardware' | 'ai' | 'backend' | 'database' | 'ui' }[];
     connections: { from: string; to: string; label?: string }[];
+    subtitle?: string;
+    statusNote?: string;
   };
   features: string[];
   technicalChallenges: string[];
   outcomes: string[];
   sdgImpact?: string;
-  subProjects?: ProjectCaseStudy[];
+  overview?: string;
+  coreModules?: {
+    letter?: string;
+    module: string;
+    points: string[];
+  }[];
+  advancedIntegrations?: {
+    title: string;
+    badge: string;
+    points: string[];
+  }[];
+  technicalLimitations?: {
+    title: string;
+    points: string[];
+  };
+  userRoles?: {
+    role: string;
+    badge: string;
+    permissions: string;
+  }[];
 }
 
 export interface SkillCategory {
