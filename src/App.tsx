@@ -5,6 +5,7 @@ import { Hero } from './components/Hero';
 import { AboutSection } from './components/AboutSection';
 import { ExperienceSection } from './components/ExperienceSection';
 import { ProjectsSection } from './components/ProjectsSection';
+import { BuildClubSection } from './components/BuildClubSection';
 import { ExpertiseSection } from './components/ExpertiseSection';
 import { AchievementsSection } from './components/AchievementsSection';
 import { ContactSection } from './components/ContactSection';
@@ -46,6 +47,11 @@ export default function App() {
         {/* Projects */}
         <ScrollReveal>
           <ProjectsSection />
+        </ScrollReveal>
+
+        {/* Build Club Projects */}
+        <ScrollReveal>
+          <BuildClubSection />
         </ScrollReveal>
 
         {/* Skills */}
